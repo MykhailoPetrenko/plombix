@@ -1,14 +1,13 @@
 const express = require('express');
 const router = express.Router();
 let MongoClient = require('mongodb').MongoClient;
-// let mongo = require('mongodb');
 // let nodemailer = require('nodemailer');
 let Plombs = require('../models/Plomba');
 let Cart =  require('../models/cart');
 
 
-/*****************************************************************/
-                /*MAIN PAGE*/
+/*****************************************************************
+                         MAIN PAGE
 /****************************************************************/
 router.get('/', function (req,res) {
     Plombs.find({},function (err, data) {
@@ -16,26 +15,18 @@ router.get('/', function (req,res) {
     });
 });
 
-/*****************************************************************/
-/*CATEGORY PAGE*/
+/*****************************************************************
+                            CATEGORY PAGE
 /****************************************************************/
 router.get('/category', function (req,res) {
     const category = req.query.category_name;
     Plombs.find({"category": category}, function (err, data) {
         res.render('main/category', {plombs : data});
     })
-   /* MongoClient.connect('mongodb://localhost', function (err, client) {
-        if(err) throw err;
-        let db= client.db('Plombix');
-        db.collection('Plombs').find({"category": category}).toArray((err, data)=>{
-            res.render('main/category', {plombs : data});
-        });
-        client.close();
-    });*/
 });
 
-/*****************************************************************/
-/*PRODUCT PAGE*/
+/*****************************************************************
+                            PRODUCT PAGE
 /****************************************************************/
 
 router.get('/product', function (req,res) {
@@ -54,24 +45,13 @@ router.get('/product', function (req,res) {
         });
     }
     pushPlombs();
-    /* MongoClient.connect('mongodb://localhost', function (err, client) {
-         if(err) throw err;
-         let db= client.db('Plombix');
-         db.collection('Plombs').find({"plomb_name": plomb}).toArray((err, data)=>{
-             plombData = data;
-         });
-         db.collection('Plombs').aggregate([{$sample:{size:4}}]).toArray((err,data)=>{
-             res.render('main/product', {plomba : plombData, recomend: data});
-         });
-         client.close();
-     });*/
 });
 router.get('/cart', function (req,res) {
     res.render('main/cart',{products: req.session.cart ? req.session.cart : {}})
 });
 
-/*****************************************************************/
-/*SEND EMAIL*/
+/*****************************************************************
+                            SEND EMAIL
 /****************************************************************/
 
 
@@ -121,32 +101,15 @@ router.get('/send', (req,res)=>{
 
 });
 */
-/*
-regex: (.*[chert.jpg])
 
- <%plomba.forEach(function (p) { %>
-                                        <%for(i in p.image){%>
-                                        <div class="product-slider-dots__item"><img class="product-slider-dots__img" src="<%=p.image[i]%>" alt="Превью продукта"></div>
-                                        <%}%>
-                                    <%})%>
- */
-
-/*****************************************************************/
-/*PRODUCTS PAGE*/
+/*****************************************************************
+                        PRODUCTS PAGE
 /****************************************************************/
 
 router.get('/products', function (req,res) {
     Plombs.find({}, function (err, data) {
         res.render('main/products', {plombs : data, products: req.session.cart ? req.session.cart : {items:{}}});
     });
- /*   MongoClient.connect('mongodb://localhost', function (err, client) {
-        if(err) throw err;
-        let db= client.db('Plombix');
-        db.collection('Plombs').find({}).toArray((err, data)=>{
-            res.render('main/products', {plombs : data});
-        });
-        client.close();
-    });*/
 });
 
 /*****************************************************************
@@ -158,14 +121,6 @@ router.post('/search', function (req,res) {
     Plombs.find({plomb_search : {$regex: reg, $options:"i"}}, function (err, data) {
         res.render('main/search', {plombs : data, reque: req.body.search_text});
     });
-  /*  MongoClient.connect('mongodb://localhost', function (err, client) {
-        if(err) throw err;
-        let db= client.db('Plombix');
-        db.collection('Plombs').find({plomb_search : {$regex: reg, $options:"i"}}).toArray((err, data)=>{
-            res.render('main/search', {plombs : data, reque: req.body.search_text});
-        });
-        client.close();
-    });*/
 });
 
 /********************************************************************
@@ -186,7 +141,7 @@ router.post('/add-to-cart', function (req, res, next) {
         console.log(req.session.cart);
         console.log('---------------------------------------');
 
-        res.send('ASDSDS');
+        res.status(200).send('Success');
     })
 });
 router.post('/delete-from-cart', function (req,res,next) {
@@ -196,7 +151,7 @@ router.post('/delete-from-cart', function (req,res,next) {
     cart.delete(plombName);
     req.session.cart = cart;
     console.log(req.session.cart);
-    res.send('123');
+    res.status(200).send('Success');
 
 });
 
