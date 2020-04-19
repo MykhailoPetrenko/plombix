@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+    <meta charset="utf-8">
+    <title>Наши товары</title><!--[if IE]>
+    <meta http-equiv="X-UA-Compatible" content="IE = edge"><![endif]-->
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="">
+    <link rel="stylesheet" type="text/css" href="css/styles.min.css"><!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script><![endif]-->
+</head>
+<body class="products-page">
+<div class="wrapper">
+    <header class="header">
+        <div class="header__top">
+            <div class="container">
+                <div class="header__content">
+                    <nav class="header__nav inform-nav">
+                        <ul class="inform-nav__list">
+                            <li class="inform-nav__item"><a class="inform-nav__link" href="/products">ТОВАРЫ</a></li>
+                            <li class="inform-nav__item"><a class="inform-nav__link" href="#l-information">ДОСТАВКА</a></li>
+                            <li class="inform-nav__item"><a class="inform-nav__link" href="#l-information">О НАС</a></li>
+                            <li class="inform-nav__item"><a class="inform-nav__link" href="#l-information">ОПЛАТА</a></li>
+                        </ul>
+                    </nav>
+                    <nav class="header__nav header__nav--right inform-nav">
+                        <ul class="inform-nav__list">
+                            <li class="inform-nav__item"><a class="inform-nav__link" href="">УКР</a></li>
+                            <li class="inform-nav__item"><a class="inform-nav__link" href="">РУС</a></li>
+                            <li class="inform-nav__item"><a class="inform-nav__link" href="">ENG</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div class="header__main">
+            <div class="container">
+                <div class="header__content"><a class="header__logo logo" href="/"><img class="logo__img" src="img/general/logo.png" alt="Логотип"></a>
+                    <div class="header__phones">
+                        <div class="header__item header__item--mobile"><a class="header__phone" href="tel:380-95-35-125">+380-95-35-125</a><a class="header__link" href="">Заказать звонок</a></div>
+                        <div class="header__item"><a class="header__phone" href="mail:mail">MAIL</a><a class="header__link" href="">Связаться с нами</a></div>
+                    </div>
+                    <div class="header__adress header-address">
+                        <svg class="svg-sprite-icon icon-map-marker header-address__icon">
+                            <use xlink:href="img/svg/symbol/sprite.svg#map-marker"></use>
+                        </svg><span class="header-address__text">Украина, Одесса ул. Набережная 79а</span>
+                    </div>
+                    <div class="header__shop">
+                        <div class="header-goods"><span class="header-goods__price">0 &#8372</span><span class="header-goods__count"><%=products.totalQty%> товаров</span></div>
+                    </div>
+                    <div class="header-basket">
+                        <a href="/cart">
+                            <svg class="svg-sprite-icon icon-cart header-basket__icon">
+                                <use xlink:href="img/svg/symbol/sprite.svg#cart"></use>
+                            </svg><span class="header-basket__text">Корзина</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header__menu">
+            <div class="container">
+                <div class="header__content">
+                    <nav class="header__main-nav main-nav">
+                        <ul class="main-nav__list">
+                            <li class="main-nav__item"><a class="main-nav__link" href="/category?category_name=tross_plomb">Тросовые пломбы</a>
+                                <div class="main-nav-dropdown-wrapper">
+                                    <div class="main-nav-dropdown">
+                                        <ul class="main-nav-dropdown__list">
+                                            <li class="main-nav-dropdown__item"><a class="main-nav-dropdown__link" href="/product?plomb_name=lockin-500"><span class="main-nav-dropdown__text">Lockin 2.25 500mm</span>
+                                                    <svg class="svg-sprite-icon icon-arrow main-nav-dropdown__icon">
+                                                        <use xlink:href="img/svg/symbol/sprite.svg#arrow"></use>
+                                                    </svg>
+                                                    <ul class="main-subnav-list"></ul></a></li>
+                                            <li class="main-nav-dropdown__item"><a class="main-nav-dropdown__link" href="/product?plomb_name=lockin-1500"><span class="main-nav-dropdown__text">Lockin 2.25 1500mm</span>
+                                                    <svg class="svg-sprite-icon icon-arrow main-nav-dropdown__icon">
+                                                        <use xlink:href="img/svg/symbol/sprite.svg#arrow"></use>
+                                                    </svg></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="main-nav__item"><a class="main-nav__link" href="/category?category_name=kontr_plomb">Контрольные пломбы</a>
+                                <div class="main-nav-dropdown-wrapper">
+                                    <div class="main-nav-dropdown">
+                                        <ul class="main-nav-dropdown__list">
+                                            <li class="main-nav-dropdown__item"><a class="main-nav-dropdown__link" href="/product?plomb_name=universal-220"><span class="main-nav-dropdown__text">Универсал 220 пломба затяжка</span>
+                                                    <svg class="svg-sprite-icon icon-arrow main-nav-dropdown__icon">
+                                                        <use xlink:href="img/svg/symbol/sprite.svg#arrow"></use>
+                                                    </svg>
+                                                    <ul class="main-subnav-list"></ul></a></li>
+                                            <li class="main-nav-dropdown__item"><a class="main-nav-dropdown__link" href="/product?plomb_name=universal-320"><span class="main-nav-dropdown__text">Универсал 320 пломба затяжка</span>
+                                                    <svg class="svg-sprite-icon icon-arrow main-nav-dropdown__icon">
+                                                        <use xlink:href="img/svg/symbol/sprite.svg#arrow"></use>
+                                                    </svg></a></li>
+                                            <li class="main-nav-dropdown__item"><a class="main-nav-dropdown__link" href="/product?plomb_name=plomb_nakl"><span class="main-nav-dropdown__text">Пломба-наклейка 20х100 мм</span>
+                                                    <svg class="svg-sprite-icon icon-arrow main-nav-dropdown__icon">
+                                                        <use xlink:href="img/svg/symbol/sprite.svg#arrow"></use>
+                                                    </svg></a></li>
+                                            <li class="main-nav-dropdown__item"><a class="main-nav-dropdown__link" href="/product?plomb_name=ochran_plomb"><span class="main-nav-dropdown__text">Охранная пломба S-22 затяжка</span>
+                                                    <svg class="svg-sprite-icon icon-arrow main-nav-dropdown__icon">
+                                                        <use xlink:href="img/svg/symbol/sprite.svg#arrow"></use>
+                                                    </svg>
+                                                    <!--7 23--></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="main-nav__item"><a class="main-nav__link" href="/category?category_name=indikat_plomb">Индикаторные пломбы</a>
+                                <div class="main-nav-dropdown-wrapper">
+                                    <div class="main-nav-dropdown">
+                                        <ul class="main-nav-dropdown__list">
+                                            <li class="main-nav-dropdown__item"><a class="main-nav-dropdown__link" href="/product?plomb_name=favorit"><span class="main-nav-dropdown__text">Фаворит пломба защелка</span>
+                                                    <svg class="svg-sprite-icon icon-arrow main-nav-dropdown__icon">
+                                                        <use xlink:href="img/svg/symbol/sprite.svg#arrow"></use>
+                                                    </svg>
+                                                    <ul class="main-subnav-list"></ul></a></li>
+                                            <li class="main-nav-dropdown__item"><a class="main-nav-dropdown__link" href="/product?plomb_name=master_rotar"><span class="main-nav-dropdown__text">Мастер роторная пломба</span>
+                                                    <svg class="svg-sprite-icon icon-arrow main-nav-dropdown__icon">
+                                                        <use xlink:href="img/svg/symbol/sprite.svg#arrow"></use>
+                                                    </svg></a></li>
+                                            <li class="main-nav-dropdown__item"><a class="main-nav-dropdown__link" href="/product?plomb_name=plomb_nakl"><span class="main-nav-dropdown__text">Пломба-наклейка 20х100 мм</span>
+                                                    <svg class="svg-sprite-icon icon-arrow main-nav-dropdown__icon">
+                                                        <use xlink:href="img/svg/symbol/sprite.svg#arrow"></use>
+                                                    </svg></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="main-nav__item"><a class="main-nav__link" href="/category?category_name=kontejner_plomb">Контейнерные пломбы</a>
+                                <div class="main-nav-dropdown-wrapper">
+                                    <div class="main-nav-dropdown">
+                                        <ul class="main-nav-dropdown__list">
+                                            <li class="main-nav-dropdown__item"><a class="main-nav-dropdown__link" href="/product?plomb_name=bootseal"><span class="main-nav-dropdown__text">Boltseal 10.5</span>
+                                                    <svg class="svg-sprite-icon icon-arrow main-nav-dropdown__icon">
+                                                        <use xlink:href="img/svg/symbol/sprite.svg#arrow"></use>
+                                                    </svg>
+                                                    <ul class="main-subnav-list"></ul></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="main-nav__item"><a class="main-nav__link" href="/category">Аксессуары</a>
+                                <div class="main-nav-dropdown-wrapper">
+                                    <div class="main-nav-dropdown">
+                                        <ul class="main-nav-dropdown__list">
+                                            <li class="main-nav-dropdown__item"><a class="main-nav-dropdown__link" href="/product"><span class="main-nav-dropdown__text">Трос пломбировочный "Универсал"</span>
+                                                    <svg class="svg-sprite-icon icon-arrow main-nav-dropdown__icon">
+                                                        <use xlink:href="img/svg/symbol/sprite.svg#arrow"></use>
+                                                    </svg>
+                                                    <ul class="main-subnav-list"></ul></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="main-nav__item"><a class="main-nav__link" href="/category?category_name=sejf_paket">Сейф-Пакеты</a>
+                                <div class="main-nav-dropdown-wrapper">
+                                    <div class="main-nav-dropdown">
+                                        <ul class="main-nav-dropdown__list">
+                                            <li class="main-nav-dropdown__item"><a class="main-nav-dropdown__link" href="/product?plomb_name=sejf_paket30"><span class="main-nav-dropdown__text">LDPE 30x42 пленка</span>
+                                                    <svg class="svg-sprite-icon icon-arrow main-nav-dropdown__icon">
+                                                        <use xlink:href="img/svg/symbol/sprite.svg#arrow"></use>
+                                                    </svg>
+                                                    <ul class="main-subnav-list"></ul></a></li>
+                                            <li class="main-nav-dropdown__item"><a class="main-nav-dropdown__link" href="/product?plomb_name=sejf_paket20"><span class="main-nav-dropdown__text">LDPE 20x29 пленка</span>
+                                                    <svg class="svg-sprite-icon icon-arrow main-nav-dropdown__icon">
+                                                        <use xlink:href="img/svg/symbol/sprite.svg#arrow"></use>
+                                                    </svg></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="header__search search">
+                        <svg class="svg-sprite-icon icon-search search__icon">
+                            <use xlink:href="img/svg/symbol/sprite.svg#search"></use>
+                        </svg>
+                        <div class="search__body">
+                            <form class="search__form" method="POST" action="/search">
+                                <div class="search__input-wrapper">
+                                    <input class="search__input" placeholder="Я хочу найти...">
+                                    <div class="search__clear">
+                                        <svg class="svg-sprite-icon icon-close search__clear-icon">
+                                            <use xlink:href="img/svg/symbol/sprite.svg#close"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <input class="search__btn" type="submit" value="Найти">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header__mobile">
+            <div class="container">
+                <div class="mobile-menu">
+                    <div class="mobile-menu__toogle">
+                        <div class="mobile-menu__sandwich sandwich">
+                            <div class="sandwich__line sandwich__line--top"></div>
+                            <div class="sandwich__line sandwich__line--midle"></div>
+                            <div class="sandwich__line sandwich__line--bottom"></div>
+                        </div><span class="mobile-menu__title">Каталог товаров</span>
+                    </div>
+                    <div class="mobile-menu__content">
+                        <div class="mobile-menu__header"><span class="mobile-menu__title">Меню</span>
+                            <div class="mobile-menu__close">
+                                <svg class="svg-sprite-icon icon-close mobile-menu__close-icon">
+                                    <use xlink:href="img/svg/symbol/sprite.svg#close"></use>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="mobile-menu__body">
+                            <nav class="catalog-nav">
+                                <ul class="catalog-nav__list">
+                                    <li class="catalog-nav__item"><a class="catalog-nav__link" href="category.html"><span class="catalog-nav__text">Тросовые пломбы</span>
+                                            <svg class="svg-sprite-icon icon-chevron-right catalog-nav__icon">
+                                                <use xlink:href="img/svg/symbol/sprite.svg#chevron-right"></use>
+                                            </svg></a></li>
+                                    <li class="catalog-nav__item"><a class="catalog-nav__link" href="category.html"><span class="catalog-nav__text">Контрольные пломбы</span>
+                                            <svg class="svg-sprite-icon icon-chevron-right catalog-nav__icon">
+                                                <use xlink:href="img/svg/symbol/sprite.svg#chevron-right"></use>
+                                            </svg></a></li>
+                                    <li class="catalog-nav__item"><a class="catalog-nav__link" href="category.html"><span class="catalog-nav__text">Индикаторные пломбы</span>
+                                            <svg class="svg-sprite-icon icon-chevron-right catalog-nav__icon">
+                                                <use xlink:href="img/svg/symbol/sprite.svg#chevron-right"></use>
+                                            </svg></a></li>
+                                    <li class="catalog-nav__item"><a class="catalog-nav__link" href="category.html"><span class="catalog-nav__text">Контейнерные пломбы</span>
+                                            <svg class="svg-sprite-icon icon-chevron-right catalog-nav__icon">
+                                                <use xlink:href="img/svg/symbol/sprite.svg#chevron-right"></use>
+                                            </svg></a></li>
+                                    <li class="catalog-nav__item"><a class="catalog-nav__link" href="category.html"><span class="catalog-nav__text">Аксессуары</span>
+                                            <svg class="svg-sprite-icon icon-chevron-right catalog-nav__icon">
+                                                <use xlink:href="img/svg/symbol/sprite.svg#chevron-right"></use>
+                                            </svg></a></li>
+                                    <li class="catalog-nav__item"><a class="catalog-nav__link" href="category.html"><span class="catalog-nav__text">Сейф-Пакеты</span>
+                                            <svg class="svg-sprite-icon icon-chevron-right catalog-nav__icon">
+                                                <use xlink:href="img/svg/symbol/sprite.svg#chevron-right"></use>
+                                            </svg></a></li>
+                                </ul>
+                            </nav>
+                            <nav class="inform-nav inform-nav--col">
+                                <ul class="inform-nav__list">
+                                    <li class="inform-nav__item"><a class="inform-nav__link" href="">Товары</a></li>
+                                    <li class="inform-nav__item"><a class="inform-nav__link" href="#l-information">Доставка</a></li>
+                                    <li class="inform-nav__item"><a class="inform-nav__link" href="#l-information">О Нас</a></li>
+                                    <li class="inform-nav__item"><a class="inform-nav__link" href="#l-information">Оплата</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="mobile-menu__footer">
+                            <div class="mobile-menu__phone"><a class="mobile-menu__phone-number" href="tel:8800553535">+8800553535</a><a class="mobile-menu__phone-link" href="">Заказать звонок</a></div>
+                            <div class="mobile-menu__phone"><a class="mobile-menu__phone-number" href="tel:8800553535">+8800553535</a><span class="mobile-menu__phone-text">Звонок бесплатный</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mobile__logo logo"><img class="logo__img" src="img/general/logo.png" alt="Логотип"></div>
+                <div class="search">
+                    <form class="search__form" method="POST" action="/search">
+                        <div class="search__input-wrapper">
+                            <input class="search__input" name="search_text" placeholder="Я хочу найти...">
+                            <div class="search__clear">
+                                <svg class="svg-sprite-icon icon-close search__clear-icon">
+                                    <use xlink:href="img/svg/symbol/sprite.svg#close"></use>
+                                </svg>
+                            </div>
+                        </div>
+                        <input class="search__btn" type="submit" value="Найти">
+                    </form>
+                </div>
+                <nav class="mobile-user-nav">
+                    <ul class="mobile-user-nav__list">
+                        <li class="mobile-user-nav__item"><a class="mobile-user-nav__link" href="">
+                                <svg class="svg-sprite-icon icon-cart mobile-user-nav__icon">
+                                    <use xlink:href="img/svg/symbol/sprite.svg#cart"></use>
+                                </svg></a></li>
+                        <li class="mobile-user-nav__item"><a class="mobile-user-nav__link" href="">
+                                <svg class="svg-sprite-icon icon-cart mobile-user-nav__icon">
+                                    <use xlink:href="img/svg/symbol/sprite.svg#cart"></use>
+                                </svg></a></li>
+                        <li class="mobile-user-nav__item"><a class="mobile-user-nav__link" href="">
+                                <svg class="svg-sprite-icon icon-cart mobile-user-nav__icon">
+                                    <use xlink:href="img/svg/symbol/sprite.svg#cart"></use>
+                                </svg></a></li>
+                        <li class="mobile-user-nav__item"><a class="mobile-user-nav__link" href="">
+                                <svg class="svg-sprite-icon icon-cart mobile-user-nav__icon">
+                                    <use xlink:href="img/svg/symbol/sprite.svg#cart"></use>
+                                </svg></a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div class="content">
+        <section class="s-products">
+            <div class="container">
+                <!-- Все товары -->
+                <div class="products-prev__wrapper">
+                    <%plombs.forEach(function(p){%>
+                    <div class="product-prev">
+                        <a style="color: black" href="<%=p.link%>">
+                        <div class="product-prev__header">
+                            <div class="js-product-prev__slider">
+                                <%for(key in p.image){%>
+                                <%if((p.image[key].match(/(chert.jpg)/g))===null){%>
+                                <div class="product-prev__img-wrapper" data-color="<%=p.colors[key]%>"><img class="product-prev__img" src="<%=p.image[key]%>" alt="Изображение товара"></div>
+                                <%}%>
+                                <%}%>
+                            </div>
+                        </div>
+                        </a>
+                        <div class="product-prev__body">
+                            <a style="color: black" href="<%=p.link%>">
+                            <div class="product-prev__info"><span class="product-prev__title"><%=p.plomb.ru%></span><span class="product-prev__about">Пластик</span></div>
+                            <div class="product-prev__price"><span class="product-prev__price-current"><%=p.price.ru%></span><span class="product-prev__price-old">1.8 грн.</span></div>
+                            </a>
+                            <div class="product-prev__colors"></div>
+                        </div>
+                        <form class="plomb_form">
+                        <div class="product-prev__footer">
+                            <input type="hidden" name="plombName" value="<%=p.plomb_name%>"/>
+                            <%if(typeof products.items[p.plomb_name]==="undefined"){%>
+                                <input type="submit" value="В корзину"  class="btn">
+                            <%}else{%>
+                                <input type="submit" value="Добавлено"  class="btn btnAdd">
+                            <%}%>
+                        </div>
+                        </form>
+                    </div>
+                    <%});%>
+                </div>
+            </div>
+        </section>
+        <section class="s-maininform">
+            <div class="container">
+                <h1 class="titles-section">Информация о магазине</h1>
+                <div class="maininform tabs" id="l-information">
+                    <div class="tabs__body maininform__body">
+                        <div class="tab tab--active tab-delivery">
+                            <p class="text">Доставка осуществляется в любой населенный пункт Украины, где есть представительство удобного Вам перевозчика. Доставка производится до склада перевозчика или, по согласованию с Клиентом, до его дверей. Обычно, Вы получите свой товар через 48 часов с момента его оплаты или выхода с производства (за исключением праздничных и выходных дней). В случае, если доставка будет занимать больше времени, Вы будете проинформированы об этом Вашим менеджером в индивидуальном порядке.</p>
+                            <p class="text">Виды доставки:</p>
+                            <ol>
+                                <li class="text-li">Удобным Вам перевозчиком (зачастую это Новая почта, Ночной экспресс и д.р.);</li>
+                                <li class="text-li">Доставка с оплатой наложенным платежом (оплата товара при получении — Новая почта), затраты за услугу по пересылке денег, оплачивает покупатель;</li>
+                                <li class="text-li">По согласованию с Вашим курирующим менеджером.</li>
+                            </ol>
+                            <p class="text">Стоимость доставки Вы можете уточнить у перевозчика или её Вам сообщит Ваш курирующий менеджер. Также, мы можем включить стоимость доставки в стоимость товара. Объемно-весовые параметры груза Вы найдете в описании самой продукции.</p>
+                        </div>
+                        <div class="tab tab-advantages">
+                            <p class="text">Оплата заказа</p>
+                            <ol>
+                                <li class="text-li">Кредитной картой любого банка по системе liqpay в разделе корзина (тарифы)</li>
+                                <li class="text-li">Безналичный расчет</li>
+                                <li class="text-li">На карту Приватбанка в Privat24, через терминал или кассу банка (реквизиты для платежа вы можете получить у менеджера)</li>
+                                <li class="text-li">Наложенным платежом при получении на Новой почте (стоимость услуги составляет 20 грн + 2% от суммы перевода)</li>
+                                <li class="text-li">Наличными в офисе при получении</li>
+                            </ol>
+                        </div>
+                        <div class="tab tab-about">
+                            <p class="text">У нас вы найдёте охранные системы, системы видеонаблюдения, домофоны, охранные пломбы и сейф-пакеты. Так же мы производим профессиональный монтаж любой сложности в кротчайшие сроки и с высоким качеством работы.</p>
+                            <p class="text">Мы заботимся о Вашем времени и комфорте, поэтому заказанные Вами товары будут доставлены в любое удобное для Вас место в кротчайший срок.</p>
+                            <p class="text">Мы осуществляем доставку по всему миру. В ряде стран у нас есть представительства, и нашу продукцию Вы можете получить через них. Стоимость доставки рассчитывается индивидуально, в зависимости от веса и объема груза, удаленности склада назначения, вида доставки.
+                            <p class="text">Мы заботимся о Вашем времени и комфорте, поэтому заказанные Вами товары будут доставлены в любое удобное для Вас место в кротчайший срок.</p>
+                            </p>
+                        </div>
+                        <div class="tab tab-company">
+                            <div class="brands__wrapper">
+                                <ul class="brands__list brands__list--small">
+                                    <li class="brands__item"><a class="brand" href=""><img class="brand__img" src="img/content/brands/may.png"><span class="brand__name">flyua</span></a></li>
+                                    <li class="brands__item"><a class="brand" href=""><img class="brand__img" src="img/content/brands/privatlogo.png"><span class="brand__name">Privat Bank</span></a></li>
+                                    <li class="brands__item"><a class="brand" href=""><img class="brand__img" src="img/content/brands/may.png"><span class="brand__name">flyua</span></a></li>
+                                    <li class="brands__item"><a class="brand" href=""><img class="brand__img" src="img/content/brands/privatlogo.png"><span class="brand__name">Privat Bank</span></a></li>
+                                    <li class="brands__item"><a class="brand" href=""><img class="brand__img" src="img/content/brands/may.png"><span class="brand__name">flyua</span></a></li>
+                                    <li class="brands__item"><a class="brand" href=""><img class="brand__img" src="img/content/brands/privatlogo.png"><span class="brand__name">Privat Bank</span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="tabs-navigation maininform-navigation">
+                        <li class="maininform-navigation__item tabs-navigation__item tabs-navigation__item--active" show-tab="tab-delivery"> Доставка</li>
+                        <li class="maininform-navigation__item tabs-navigation__item" show-tab="tab-advantages">Оплата</li>
+                        <li class="maininform-navigation__item tabs-navigation__item" show-tab="tab-about">O нас</li>
+                        <li class="maininform-navigation__item tabs-navigation__item" show-tab="tab-company">Компании-сотрудники</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer class="footer">
+        <div class="footer__main">
+            <div class="container"><span class="plombix">Plombix</span><span class="plombix__adres">Украина, Одесса ул. Набережная 76а</span></div>
+        </div>
+        <div class="footer__socials">
+            <div class="container">
+                <ul class="socials">
+                    <li class="socials__item"><a class="socials__link" href=""><img class="socials__icon" src="img/general/socials/facebook.svg"><span class="socials__name">Facebook</span></a></li>
+                    <li class="socials__item"><a class="socials__link" href=""><img class="socials__icon" src="img/general/socials/instagram.svg"><span class="socials__name">Instagram</span></a></li>
+                    <li class="socials__item"><a class="socials__link" href=""><img class="socials__icon" src="img/general/socials/vk.svg"><span class="socials__name">Вконтакте</span></a></li>
+                    <li class="socials__item"><a class="socials__link" href=""><img class="socials__icon" src="img/general/socials/gmail.svg"><span class="socials__name">Gmail</span></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <div class="container"><span class="copyright">Copyright © 2013-2019 Plombix™</span><a class="footer__personal-data" href="">Политика обработки персональных данных</a></div>
+        </div>
+    </footer>
+</div>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/libs.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/ajax.js"></script>
+</body>
+</html>1

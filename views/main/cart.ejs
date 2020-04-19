@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+    <meta charset="utf-8">
+    <title>Корзина</title><!--[if IE]>
+    <meta http-equiv="X-UA-Compatible" content="IE = edge"><![endif]-->
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="">
+    <link rel="stylesheet" type="text/css" href="css/styles.min.css">
+    <script src="js/cart.js" async></script>
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script><![endif]-->
+</head>
+<body class="card-page">
+<div class="wrapper">
+    <header class="header">
+        <div class="header__top">
+            <div class="container">
+                <div class="header__content">
+                    <nav class="header__nav inform-nav">
+                        <ul class="inform-nav__list">
+                            <li class="inform-nav__item"><a class="inform-nav__link" href="/products">ТОВАРЫ</a></li>
+                            <li class="inform-nav__item"><a class="inform-nav__link" href="#l-information">ДОСТАВКА</a></li>
+                            <li class="inform-nav__item"><a class="inform-nav__link" href="#l-information">О НАС</a></li>
+                            <li class="inform-nav__item"><a class="inform-nav__link" href="#l-information">ОПЛАТА</a></li>
+                        </ul>
+                    </nav>
+                    <nav class="header__nav header__nav--right inform-nav">
+                        <ul class="inform-nav__list">
+                            <li class="inform-nav__item"><a class="inform-nav__link" href="">УКР</a></li>
+                            <li class="inform-nav__item"><a class="inform-nav__link" href="">РУС</a></li>
+                            <li class="inform-nav__item"><a class="inform-nav__link" href="">ENG</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div class="header__main">
+            <div class="container">
+                <div class="header__content"><a class="header__logo logo" href="/"><img class="logo__img" src="img/general/logo.png" alt="Логотип"></a>
+                    <div class="header__phones">
+                        <div class="header__item header__item--mobile"><a class="header__phone" href="tel:380-95-35-125">+380-95-35-125</a>
+                            <div class="call-menu">
+                                <div class="header__link">Заказать звонок</div>
+                                <div class="call-menu__content">
+                                    <div class="call-menu__header"><span class="call-menu__title">Обратная связь</span>
+                                        <div class="call-menu__close">
+                                            <svg class="svg-sprite-icon icon-close mobile-menu__close-icon">
+                                                <use xlink:href="img/svg/symbol/sprite.svg#close"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="call-menu__body">
+                                        <nav class="catalog-nav">
+                                            <div class="call-menu__input-wrapper"><span class="text_call">Имя</span></div>
+                                            <div class="call-menu__input-wrapper">
+                                                <input class="call-menu__input" placeholder="Введите ваше имя...">
+                                                <div class="search__clear">
+                                                    <svg class="svg-sprite-icon icon-close search__clear-icon">
+                                                        <use xlink:href="img/svg/symbol/sprite.svg#close"></use>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                            <div class="call-menu__input-wrapper"><span class="text_call">Телефон / Email</span></div>
+                                            <div class="call-menu__input-wrapper">
+                                                <input class="call-menu__input" placeholder="Введите телефон / почтy...">
+                                                <div class="search__clear">
+                                                    <svg class="svg-sprite-icon icon-close search__clear-icon">
+                                                        <use xlink:href="img/svg/symbol/sprite.svg#close"></use>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                            <div class="call-menu__input-wrapper">
+                                                <a href="/send">
+                                                    <button class="btn">Отправить</button>
+                                                </a>
+                                            </div>
+                                        </nav>
+                                        <nav class="inform-nav inform-nav--col">
+                                            <ul class="call-menu__list">
+                                                <li class="call-menu__item"><span class="catalog-nav__text">Мы ответим вам в течении нескольких часов</span></li>
+                                                <li class="inform-nav__item"><a class="inform-nav__link" href="https://finacademy.net/politika-konfidencialnosli-ukraina">Политика обработки персональных данных</a></li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="header__item"><a class="header__phone" href="mail:mail">MAIL</a>
+                            <div class="header__link">Связаться с нами</div>
+                        </div>
+                    </div>
+                    <div class="header__adress header-address">
+                        <svg class="svg-sprite-icon icon-map-marker header-address__icon">
+                            <use xlink:href="img/svg/symbol/sprite.svg#map-marker"></use>
+                        </svg><span class="header-address__text">Украина, Одесса ул. Набережная 79а</span>
+                    </div>
+                    <div class="header__shop">
+                        <div class="header-goods"><span class="header-goods__price">0 &#8372</span><span class="header-goods__count">0 товаров</span></div>
+                    </div><a class="header-basket" href="/cart">
+                        <svg class="svg-sprite-icon icon-cart header-basket__icon">
+                            <use xlink:href="img/svg/symbol/sprite.svg#cart"></use>
+                        </svg><span class="header-basket__text">Корзина</span></a>
+                </div>
+            </div>
+        </div>
+        <div class="header__menu">
+            <div class="container">
+                <div class="header__content">
+                    <nav class="header__main-nav main-nav">
+                        <ul class="main-nav__list">
+                            <li class="main-nav__item"><a class="main-nav__link" href="/category?category_name=tross_plomb">Тросовые пломбы</a>
+                                <div class="main-nav-dropdown-wrapper">
+                                    <div class="main-nav-dropdown">
+                                        <ul class="main-nav-dropdown__list">
+                                            <li class="main-nav-dropdown__item"><a class="main-nav-dropdown__link" href="/product?plomb_name=lockin-500"><span class="main-nav-dropdown__text">Lockin 2.25 500mm</span>
+                                                    <svg class="svg-sprite-icon icon-arrow main-nav-dropdown__icon">
+                                                        <use xlink:href="img/svg/symbol/sprite.svg#arrow"></use>
+                                                    </svg>
+                                                    <ul class="main-subnav-list"></ul></a></li>
+                                            <li class="main-nav-dropdown__item"><a class="main-nav-dropdown__link" href="/product?plomb_name=lockin-1500"><span class="main-nav-dropdown__text">Lockin 2.25 1500mm</span>
+                                                    <svg class="svg-sprite-icon icon-arrow main-nav-dropdown__icon">
+                                                        <use xlink:href="img/svg/symbol/sprite.svg#arrow"></use>
+                                                    </svg></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="main-nav__item"><a class="main-nav__link" href="/category?category_name=kontr_plomb">Контрольные пломбы</a>
+                                <div class="main-nav-dropdown-wrapper">
+                                    <div class="main-nav-dropdown">
+                                        <ul class="main-nav-dropdown__list">
+                                            <li class="main-nav-dropdown__item"><a class="main-nav-dropdown__link" href="/product?plomb_name=universal-220"><span class="main-nav-dropdown__text">Универсал 220 пломба затяжка</span>
+                                                    <svg class="svg-sprite-icon icon-arrow main-nav-dropdown__icon">
+                                                        <use xlink:href="img/svg/symbol/sprite.svg#arrow"></use>
+                                                    </svg>
+                                                    <ul class="main-subnav-list"></ul></a></li>
+                                            <li class="main-nav-dropdown__item"><a class="main-nav-dropdown__link" href="/product?plomb_name=universal-320"><span class="main-nav-dropdown__text">Универсал 320 пломба затяжка</span>
+                                                    <svg class="svg-sprite-icon icon-arrow main-nav-dropdown__icon">
+                                                        <use xlink:href="img/svg/symbol/sprite.svg#arrow"></use>
+                                                    </svg></a></li>
+                                            <li class="main-nav-dropdown__item"><a class="main-nav-dropdown__link" href="/product?plomb_name=plomb_nakl"><span class="main-nav-dropdown__text">Пломба-наклейка 20х100 мм</span>
+                                                    <svg class="svg-sprite-icon icon-arrow main-nav-dropdown__icon">
+                                                        <use xlink:href="img/svg/symbol/sprite.svg#arrow"></use>
+                                                    </svg></a></li>
+                                            <li class="main-nav-dropdown__item"><a class="main-nav-dropdown__link" href="/product?plomb_name=ochran_plomb"><span class="main-nav-dropdown__text">Охранная пломба S-22 затяжка</span>
+                                                    <svg class="svg-sprite-icon icon-arrow main-nav-dropdown__icon">
+                                                        <use xlink:href="img/svg/symbol/sprite.svg#arrow"></use>
+                                                    </svg>
+                                                    <!--7 23--></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="main-nav__item"><a class="main-nav__link" href="/category?category_name=indikat_plomb">Индикаторные пломбы</a>
+                                <div class="main-nav-dropdown-wrapper">
+                                    <div class="main-nav-dropdown">
+                                        <ul class="main-nav-dropdown__list">
+                                            <li class="main-nav-dropdown__item"><a class="main-nav-dropdown__link" href="/product?plomb_name=favorit"><span class="main-nav-dropdown__text">Фаворит пломба защелка</span>
+                                                    <svg class="svg-sprite-icon icon-arrow main-nav-dropdown__icon">
+                                                        <use xlink:href="img/svg/symbol/sprite.svg#arrow"></use>
+                                                    </svg>
+                                                    <ul class="main-subnav-list"></ul></a></li>
+                                            <li class="main-nav-dropdown__item"><a class="main-nav-dropdown__link" href="/product?plomb_name=master_rotar"><span class="main-nav-dropdown__text">Мастер роторная пломба</span>
+                                                    <svg class="svg-sprite-icon icon-arrow main-nav-dropdown__icon">
+                                                        <use xlink:href="img/svg/symbol/sprite.svg#arrow"></use>
+                                                    </svg></a></li>
+                                            <li class="main-nav-dropdown__item"><a class="main-nav-dropdown__link" href="/product?plomb_name=plomb_nakl"><span class="main-nav-dropdown__text">Пломба-наклейка 20х100 мм</span>
+                                                    <svg class="svg-sprite-icon icon-arrow main-nav-dropdown__icon">
+                                                        <use xlink:href="img/svg/symbol/sprite.svg#arrow"></use>
+                                                    </svg></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="main-nav__item"><a class="main-nav__link" href="/category?category_name=kontejner_plomb">Контейнерные пломбы</a>
+                                <div class="main-nav-dropdown-wrapper">
+                                    <div class="main-nav-dropdown">
+                                        <ul class="main-nav-dropdown__list">
+                                            <li class="main-nav-dropdown__item"><a class="main-nav-dropdown__link" href="/product?plomb_name=bootseal"><span class="main-nav-dropdown__text">Boltseal 10.5</span>
+                                                    <svg class="svg-sprite-icon icon-arrow main-nav-dropdown__icon">
+                                                        <use xlink:href="img/svg/symbol/sprite.svg#arrow"></use>
+                                                    </svg>
+                                                    <ul class="main-subnav-list"></ul></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="main-nav__item"><a class="main-nav__link" href="/category">Аксессуары</a>
+                                <div class="main-nav-dropdown-wrapper">
+                                    <div class="main-nav-dropdown">
+                                        <ul class="main-nav-dropdown__list">
+                                            <li class="main-nav-dropdown__item"><a class="main-nav-dropdown__link" href="/product"><span class="main-nav-dropdown__text">Трос пломбировочный "Универсал"</span>
+                                                    <svg class="svg-sprite-icon icon-arrow main-nav-dropdown__icon">
+                                                        <use xlink:href="img/svg/symbol/sprite.svg#arrow"></use>
+                                                    </svg>
+                                                    <ul class="main-subnav-list"></ul></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="main-nav__item"><a class="main-nav__link" href="/category?category_name=sejf_paket">Сейф-Пакеты</a>
+                                <div class="main-nav-dropdown-wrapper">
+                                    <div class="main-nav-dropdown">
+                                        <ul class="main-nav-dropdown__list">
+                                            <li class="main-nav-dropdown__item"><a class="main-nav-dropdown__link" href="/product?plomb_name=sejf_paket30"><span class="main-nav-dropdown__text">LDPE 30x42 пленка</span>
+                                                    <svg class="svg-sprite-icon icon-arrow main-nav-dropdown__icon">
+                                                        <use xlink:href="img/svg/symbol/sprite.svg#arrow"></use>
+                                                    </svg>
+                                                    <ul class="main-subnav-list"></ul></a></li>
+                                            <li class="main-nav-dropdown__item"><a class="main-nav-dropdown__link" href="/product?plomb_name=sejf_paket20"><span class="main-nav-dropdown__text">LDPE 20x29 пленка</span>
+                                                    <svg class="svg-sprite-icon icon-arrow main-nav-dropdown__icon">
+                                                        <use xlink:href="img/svg/symbol/sprite.svg#arrow"></use>
+                                                    </svg></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="header__search search">
+                        <svg class="svg-sprite-icon icon-search search__icon">
+                            <use xlink:href="img/svg/symbol/sprite.svg#search"></use>
+                        </svg>
+                        <div class="search__body">
+                            <form class="search__form" action="search.html">
+                                <div class="search__input-wrapper">
+                                    <input class="search__input" placeholder="Я хочу найти...">
+                                    <div class="search__clear">
+                                        <svg class="svg-sprite-icon icon-close search__clear-icon">
+                                            <use xlink:href="img/svg/symbol/sprite.svg#close"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <input class="search__btn" type="submit" value="Найти">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header__mobile">
+            <div class="container">
+                <div class="mobile-menu">
+                    <div class="mobile-menu__toogle">
+                        <div class="mobile-menu__sandwich sandwich">
+                            <div class="sandwich__line sandwich__line--top"></div>
+                            <div class="sandwich__line sandwich__line--midle"></div>
+                            <div class="sandwich__line sandwich__line--bottom"></div>
+                        </div><span class="mobile-menu__title">Каталог товаров</span>
+                    </div>
+                    <div class="mobile-menu__content">
+                        <div class="mobile-menu__header"><span class="mobile-menu__title">Меню</span>
+                            <div class="mobile-menu__close">
+                                <svg class="svg-sprite-icon icon-close mobile-menu__close-icon">
+                                    <use xlink:href="img/svg/symbol/sprite.svg#close"></use>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="mobile-menu__body">
+                            <nav class="catalog-nav">
+                                <ul class="catalog-nav__list">
+                                    <li class="catalog-nav__item"><a class="catalog-nav__link" href="category.html"><span class="catalog-nav__text">Тросовые пломбы</span>
+                                            <svg class="svg-sprite-icon icon-chevron-right catalog-nav__icon">
+                                                <use xlink:href="img/svg/symbol/sprite.svg#chevron-right"></use>
+                                            </svg></a></li>
+                                    <li class="catalog-nav__item"><a class="catalog-nav__link" href="category.html"><span class="catalog-nav__text">Контрольные пломбы</span>
+                                            <svg class="svg-sprite-icon icon-chevron-right catalog-nav__icon">
+                                                <use xlink:href="img/svg/symbol/sprite.svg#chevron-right"></use>
+                                            </svg></a></li>
+                                    <li class="catalog-nav__item"><a class="catalog-nav__link" href="category.html"><span class="catalog-nav__text">Индикаторные пломбы</span>
+                                            <svg class="svg-sprite-icon icon-chevron-right catalog-nav__icon">
+                                                <use xlink:href="img/svg/symbol/sprite.svg#chevron-right"></use>
+                                            </svg></a></li>
+                                    <li class="catalog-nav__item"><a class="catalog-nav__link" href="category.html"><span class="catalog-nav__text">Контейнерные пломбы</span>
+                                            <svg class="svg-sprite-icon icon-chevron-right catalog-nav__icon">
+                                                <use xlink:href="img/svg/symbol/sprite.svg#chevron-right"></use>
+                                            </svg></a></li>
+                                    <li class="catalog-nav__item"><a class="catalog-nav__link" href="category.html"><span class="catalog-nav__text">Аксессуары</span>
+                                            <svg class="svg-sprite-icon icon-chevron-right catalog-nav__icon">
+                                                <use xlink:href="img/svg/symbol/sprite.svg#chevron-right"></use>
+                                            </svg></a></li>
+                                    <li class="catalog-nav__item"><a class="catalog-nav__link" href="category.html"><span class="catalog-nav__text">Сейф-Пакеты</span>
+                                            <svg class="svg-sprite-icon icon-chevron-right catalog-nav__icon">
+                                                <use xlink:href="img/svg/symbol/sprite.svg#chevron-right"></use>
+                                            </svg></a></li>
+                                </ul>
+                            </nav>
+                            <nav class="inform-nav inform-nav--col">
+                                <ul class="inform-nav__list">
+                                    <li class="inform-nav__item"><a class="inform-nav__link" href="">Товары</a></li>
+                                    <li class="inform-nav__item"><a class="inform-nav__link" href="#l-information">Доставка</a></li>
+                                    <li class="inform-nav__item"><a class="inform-nav__link" href="#l-information">О Нас</a></li>
+                                    <li class="inform-nav__item"><a class="inform-nav__link" href="#l-information">Оплата</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="mobile-menu__footer">
+                            <div class="mobile-menu__phone"><a class="mobile-menu__phone-number" href="tel:8800553535">+8800553535</a><span class="header__link-helper">Заказать звонок</span></div>
+                            <div class="mobile-menu__phone"><a class="mobile-menu__phone-number" href="tel:8800553535">+8800553535</a><span class="mobile-menu__phone-text">Звонок бесплатный</span></div>
+                        </div>
+                        <div class="call-menu call-menu-helper">
+                            <div class="call-menu__content">
+                                <div class="call-menu__header"><span class="call-menu__title">Обратная связь</span>
+                                    <div class="call-menu__close">
+                                        <svg class="svg-sprite-icon icon-close mobile-menu__close-icon">
+                                            <use xlink:href="img/svg/symbol/sprite.svg#close"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="call-menu__body">
+                                    <nav class="catalog-nav">
+                                        <div class="call-menu__input-wrapper"><span class="text_call">Имя</span></div>
+                                        <div class="call-menu__input-wrapper">
+                                            <input class="call-menu__input" placeholder="Введите ваше имя...">
+                                            <div class="search__clear">
+                                                <svg class="svg-sprite-icon icon-close search__clear-icon">
+                                                    <use xlink:href="img/svg/symbol/sprite.svg#close"></use>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                        <div class="call-menu__input-wrapper"><span class="text_call">Телефон / Email</span></div>
+                                        <div class="call-menu__input-wrapper">
+                                            <input class="call-menu__input" placeholder="Введите телефон / почтy...">
+                                            <div class="search__clear">
+                                                <svg class="svg-sprite-icon icon-close search__clear-icon">
+                                                    <use xlink:href="img/svg/symbol/sprite.svg#close"></use>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                        <div class="call-menu__input-wrapper">
+                                            <button class="btn">Отправить</button>
+                                        </div>
+                                    </nav>
+                                    <nav class="inform-nav inform-nav--col">
+                                        <ul class="call-menu__list">
+                                            <li class="call-menu__item"><span class="catalog-nav__text">Мы ответим вам в течении нескольких часов</span></li>
+                                            <li class="inform-nav__item"><a class="inform-nav__link" href="https://finacademy.net/politika-konfidencialnosli-ukraina">Политика обработки персональных данных</a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mobile__logo logo"><img class="logo__img" src="img/general/logo.png" alt="Логотип"></div>
+                <div class="search">
+                    <form class="search__form">
+                        <div class="search__input-wrapper">
+                            <input class="search__input" placeholder="Я хочу найти...">
+                            <div class="search__clear">
+                                <svg class="svg-sprite-icon icon-close search__clear-icon">
+                                    <use xlink:href="img/svg/symbol/sprite.svg#close"></use>
+                                </svg>
+                            </div>
+                        </div>
+                        <input class="search__btn" type="submit" value="Найти">
+                    </form>
+                </div>
+                <nav class="mobile-user-nav">
+                    <ul class="mobile-user-nav__list">
+                        <li class="mobile-user-nav__item"><a class="mobile-user-nav__link" href="">
+                                <svg class="svg-sprite-icon icon-cart mobile-user-nav__icon">
+                                    <use xlink:href="img/svg/symbol/sprite.svg#cart"></use>
+                                </svg></a></li>
+                        <li class="mobile-user-nav__item"><a class="mobile-user-nav__link" href="">
+                                <svg class="svg-sprite-icon icon-cart mobile-user-nav__icon">
+                                    <use xlink:href="img/svg/symbol/sprite.svg#cart"></use>
+                                </svg></a></li>
+                        <li class="mobile-user-nav__item"><a class="mobile-user-nav__link" href="">
+                                <svg class="svg-sprite-icon icon-cart mobile-user-nav__icon">
+                                    <use xlink:href="img/svg/symbol/sprite.svg#cart"></use>
+                                </svg></a></li>
+                        <li class="mobile-user-nav__item"><a class="mobile-user-nav__link" href="">
+                                <svg class="svg-sprite-icon icon-cart mobile-user-nav__icon">
+                                    <use xlink:href="img/svg/symbol/sprite.svg#cart"></use>
+                                </svg></a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <!--Elements in cart:-->
+    <div class="content">
+        <section class="s-cart">
+            <div class="container">
+                <div class="cart-row"><span class="cart-item cart-deader cart-column">ITEM</span><span class="cart-price cart-deader cart-column">PRICE</span><span class="cart-quantity cart-deader cart-column">QUANTITY</span></div>
+                <div class="cart-items">
+                    <%for(key in products.items){%>
+                        <div class="cart-row">
+                            <div class="cart-item cart-column"><img class="cart-item-image" src="<%=products.items[key].item.image[0]%>"><span class="cart-item-title"><%=products.items[key].item.plomb.ru%></span></div><span class="cart-price cart-column"><%=products.items[key].item.price.ru%></span>
+                            <div class="cart-quantity cart-column">
+                                <input class="cart-quantity-input" type="number" value="<%=products.items[key].count%>">
+                                <button name="<%=key%>" class="btn-remove">REMOVE</button>
+                            </div>
+                        </div>
+                    <%};%>
+                    <div class="cart-total"><strong class="cart-total-title">Total</strong><span class="cart-total-price"><%=products.totalPrice%> <span>грн</span> </span></div>
+                    <button class="btn btn-primary btn-purchase"> PURCHASE</button>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer class="footer">
+        <div class="footer__main">
+            <div class="container"><span class="plombix">Plombix</span><span class="plombix__adres">Украина, Одесса ул. Набережная 76а</span></div>
+        </div>
+        <div class="footer__socials">
+            <div class="container">
+                <ul class="socials">
+                    <li class="socials__item"><a class="socials__link" href=""><img class="socials__icon" src="img/general/socials/facebook.svg"><span class="socials__name">Facebook</span></a></li>
+                    <li class="socials__item"><a class="socials__link" href=""><img class="socials__icon" src="img/general/socials/instagram.svg"><span class="socials__name">Instagram</span></a></li>
+                    <li class="socials__item"><a class="socials__link" href=""><img class="socials__icon" src="img/general/socials/vk.svg"><span class="socials__name">Вконтакте</span></a></li>
+                    <li class="socials__item"><a class="socials__link" href=""><img class="socials__icon" src="img/general/socials/gmail.svg"><span class="socials__name">Gmail</span></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <div class="container"><span class="copyright">Copyright © 2013-2019 Plombix™</span><a class="footer__personal-data" href="">Политика обработки персональных данных</a></div>
+        </div>
+    </footer>
+</div>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/libs.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/ajax.js"></script>
+</body>
+</html>

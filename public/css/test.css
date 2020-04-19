@@ -1,0 +1,20 @@
+.btnAdd {
+    background-color: white;
+    height: 40px;
+    border: 1px solid #4ab95e;
+    border-radius: 2px;
+    display: block;
+    text-align: center;
+    line-height: 38px;
+    color: #4ab95e;
+    cursor: pointer;
+    font-weight: 600;
+    padding: 0 40px;
+    -webkit-transition: all linear .3s;
+    -o-transition: all linear .3s;
+    transition: all linear .3s;
+    width: 100%;
+    white-space: nowrap; }
+.btnAdd:hover {
+    background-color: #4bc468;
+    color: white; }
