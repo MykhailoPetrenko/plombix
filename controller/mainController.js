@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
-let MongoClient = require('mongodb').MongoClient;
+const request = require('request');
+const config = require('../config');
 // let nodemailer = require('nodemailer');
 let Plombs = require('../models/Plomba');
 let Cart =  require('../models/cart');
@@ -108,7 +109,7 @@ router.get('/send', (req,res)=>{
 
 router.get('/products', function (req,res) {
     Plombs.find({}, function (err, data) {
-        res.render('main/products', {plombs : data, products: req.session.cart ? req.session.cart : {items:{}}});
+        res.render('main/products', {plombs : data, products: req.session.cart ? req.session.cart : {items:{},totalQty:0}});
     });
 });
 
@@ -153,6 +154,31 @@ router.post('/delete-from-cart', function (req,res,next) {
     console.log(req.session.cart);
     res.status(200).send('Success');
 
+});
+router.get('/get-data-post', function (req,res,next) {
+    let jsonData = {
+        "apiKey": config.apiKey,
+        "modelName": "Address",
+        "calledMethod": "getWarehouses",
+        "methodProperties": {
+            "CityName": req.query.sity
+        }
+    };
+    let sendReq = {
+       uri :'https://api.novaposhta.ua/v2.0/json/',
+       body: JSON.stringify(jsonData),
+       method:'POST',
+       headers: {
+            'Content-Type': 'application/json'
+       }
+    };
+    request(sendReq, function (err, response) {
+        let city = [];
+        JSON.parse(response.body).data.filter((i)=>{
+            city.push(i.DescriptionRu)
+        });
+        res.send({city:city})
+    });
 });
 
 module.exports.route = router;

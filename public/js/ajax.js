@@ -18,6 +18,42 @@ $('.btn-remove').on('click',function (event) {
         data: {plombName: $(this)[0].name}
     });
 });
+$('select').on('change',function () {
+    let sity = $("option:selected", this).text();
+    getData(sity);
+});
+
+function getData(sity) {
+    let mainData;
+    $.ajax({
+        url:'/get-data-post',
+        method:'GET',
+        data:{sity : sity},
+        success:function (data) {
+            mainData = data.city;
+            autocompleteCity(mainData);
+        }
+    });
+}
+function autocompleteCity(mainData) {
+    $('#address').autocomplete({
+        source:  function(request, response) {
+            let results = $.ui.autocomplete.filter(mainData, request.term);
+            response(results.slice(0, 10));
+        }
+    });
+}
+
+/**
+  $("#auto").autocomplete({
+    source: function(request, response) {
+        var results = $.ui.autocomplete.filter(myarray, request.term);
+
+        response(results.slice(0, 10));
+    }
+});
+ */
+
 /**
  * @return {string}
  */
@@ -36,4 +72,16 @@ function replaceInAdd(frm){
     }
     frm[0].getElementsByClassName('btn')[0].value='Добавлено';
 }
+
+/**
+ * {
+ "apiKey": "34f04f2e621da99d13154fcde9fd1101",
+ "modelName": "Address",
+    "calledMethod": "getWarehouses",
+    "methodProperties": {
+        "CityName": "Київ",
+        "FindByString":"П"
+    }
+}
+ */
 

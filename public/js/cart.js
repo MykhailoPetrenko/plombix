@@ -72,3 +72,4 @@ $('.btn-purchase').on('click', function (e) {
     e.preventDefault();
 });
 
+

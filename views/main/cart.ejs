@@ -7,9 +7,15 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="keywords" content="">
     <link rel="stylesheet" type="text/css" href="css/styles.min.css">
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+
+
     <script src="js/cart.js" async></script>
     <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script><![endif]-->
+
 </head>
 <body class="card-page">
 <div class="wrapper">
@@ -413,7 +419,13 @@
                             <input type="email" name="email" placeholder="Email ">
                             <label for="town">Адрес доставки:</label>
                             <input type="text" name="town" placeholder="Город *">
-                            <input type="text" name="surname" placeholder="Адрес *">
+                            <select id="job" name="field4">
+                                    <option value="" disabled selected hidden>Выберите город...</option>
+                                    <option value="fishkeeping">Киев</option>
+                                    <option value="reading">Днепр</option>
+                                    <option value="boxing">Одесса</option>
+                            </select>
+                            <input id="address" type="text" name="surname" placeholder="Адрес *">
                         </fieldset>
                         <fieldset>
                             <legend><span class="number">2</span> Данные об оплате</legend>
@@ -448,7 +460,7 @@
         </div>
     </footer>
 </div>
-<script src="js/jquery-3.3.1.min.js"></script>
+
 <script src="js/libs.min.js"></script>
 <script src="js/main.js"></script>
 <script src="js/ajax.js"></script>

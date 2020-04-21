@@ -1145,7 +1145,8 @@ footer {
     margin-bottom: 8px;
 }
 
-.form-style-5 input {
+.form-style-5 input,
+.form-style-5 select{
     font-family: Georgia, "Times New Roman", Times, serif;
     background: rgba(255,255,255,.1);
     border: none;
@@ -1164,8 +1165,13 @@ footer {
     margin-bottom: 30px;
 }
 
-.form-style-5 input:focus{
+.form-style-5 input:focus,
+.form-style-5 select:focus{
     background: #d2d9dd;
+}
+.form-style-5 select{
+    -webkit-appearance: menulist-button;
+    height:35px;
 }
 
 .form-style-5 .number {

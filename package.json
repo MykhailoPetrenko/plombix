@@ -14,10 +14,12 @@
     "ejs": "^2.7.4",
     "express": "^4.17.1",
     "express-validator": "^6.3.1",
+    "jquery-autocompleter": "^0.3.0",
     "mongodb": "^3.4.0",
     "mongoose": "^5.9.7",
     "nodemailer": "^6.4.2",
     "normalize.css": "^8.0.0",
+    "request": "^2.88.2",
     "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
