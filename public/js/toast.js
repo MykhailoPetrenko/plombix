@@ -60,7 +60,8 @@ Toast.create = function (text, color) {
     fragment.appendChild(toast);
     return fragment;
 };
-let snd = new Audio('../toast.mp3');
+
+
 Toast.add = function (params) {
     var config = {
         header: 'Название заголовка',
@@ -84,8 +85,6 @@ Toast.add = function (params) {
     var toasts = document.querySelectorAll('.toast');
     var toast = new Toast(toasts[toasts.length - 1], { autohide: config.autohide, delay: config.delay });
     toast.show();
-    snd.currentTime = 0;
-    snd.play();
     return toast;
 };
 
