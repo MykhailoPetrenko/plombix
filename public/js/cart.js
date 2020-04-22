@@ -60,16 +60,25 @@ function GetNameCount(len) {
 }
 
 $('.btn-purchase').on('click', function (e) {
-    $('.s-cart').fadeOut(800, function () {
-        $('.s-cart').css({display:"none",display:'block'}).slideUp();
-        $('.btn-purchase').css('display','none');
-        $('.cart-items').addClass('cart-items-purchace')
-            .appendTo('.purchase-wrapper');
-        $('.form-style-5, .cart-items').css({display:'block', display:"none"}).slideDown();
-        $('html,body').stop().animate({ scrollTop: $('#test').offset().top - 23}, 1000);
+    if($('.cart-row').length>1) {
+        $('.s-cart').fadeOut(800, function () {
+            $('.s-cart').css({display: "none", display: 'block'}).slideUp();
+            $('.btn-purchase').css('display', 'none');
+            $('.cart-items').addClass('cart-items-purchace')
+                .appendTo('.purchase-wrapper');
+            $('.form-style-5, .cart-items').css({display: 'block', display: "none"}).slideDown();
+            $('html,body').stop().animate({scrollTop: $('#test').offset().top - 23}, 1000);
 
-    });
-    e.preventDefault();
+        });
+        e.preventDefault();
+    }else{
+        Toast.add({
+            text: 'Корзина пуста...',
+            color: '#a74e37',
+            autohide: true,
+            delay: 3000
+        });
+    }
 });
 
 
