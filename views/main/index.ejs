@@ -6,7 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE = edge"><![endif]-->
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="keywords" content="">
-    <link rel="stylesheet" type="text/css" href="css/styles.min.css"><!--[if lt IE 9]>
+    <link rel="stylesheet" type="text/css" href="css/styles.min.css">
+    <link href="css/toast.css" rel="stylesheet">
+    <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script><![endif]-->
 </head>
 <body class="index-page">
@@ -17,17 +19,18 @@
                 <div class="header__content">
                     <nav class="header__nav inform-nav">
                         <ul class="inform-nav__list">
-                            <li class="inform-nav__item"><a class="inform-nav__link" href="/products">ТОВАРЫ</a></li>
-                            <li class="inform-nav__item"><a class="inform-nav__link" href="#l-information">ДОСТАВКА</a></li>
-                            <li class="inform-nav__item"><a class="inform-nav__link" href="#l-information">О НАС</a></li>
-                            <li class="inform-nav__item"><a class="inform-nav__link" href="#l-information">ОПЛАТА</a></li>
+                            <li class="inform-nav__item"><a class="inform-nav__link" href="/products"><%=main.header.nav.product%></a></li>
+                            <li class="inform-nav__item"><a class="inform-nav__link" href="#tab-delivery"><%=main.header.nav.delivery%></a></li>
+                            <li class="inform-nav__item"><a class="inform-nav__link" href="#l-information"><%=main.header.nav.about%></a></li>
+                            <li class="inform-nav__item"><a class="inform-nav__link" href="#tab-payment"><%=main.header.nav.payments%></a></li>
                         </ul>
                     </nav>
                     <nav class="header__nav header__nav--right inform-nav">
                         <ul class="inform-nav__list">
-                            <li class="inform-nav__item"><a class="inform-nav__link" href="">УКР</a></li>
-                            <li class="inform-nav__item"><a class="inform-nav__link" href="">РУС</a></li>
-                            <li class="inform-nav__item"><a class="inform-nav__link" href="">ENG</a></li>
+                            <li class="inform-nav__item"><a class="inform-nav__link change_lang" href="/change-language?language=uk">УКР</a></li>
+                            <li class="inform-nav__item"><a class="inform-nav__link change_lang" href="/change-language?language=ru">РУС</a></li>
+                            <li class="inform-nav__item"><a class="inform-nav__link change_lang" href="/change-language?language=pl">PL</a></li>
+                            <li class="inform-nav__item"><a class="inform-nav__link change_lang" href="/change-language?language=en">ENG</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -37,11 +40,11 @@
             <div class="container">
                 <div class="header__content"><a class="header__logo logo" href="/"><img class="logo__img" src="../../img/general/logo.png" alt="Логотип"></a>
                     <div class="header__phones">
-                        <div class="header__item header__item--mobile"><a class="header__phone" href="tel:380-95-35-125">+380-95-35-125</a>
+                        <div class="header__item header__item--mobile"><a class="header__phone" href="tel:380-95-35-125"><%=main.header.feedback.phone_number%></a>
                             <div class="call-menu">
-                                <div class="header__link">Заказать звонок</div>
+                                <div class="header__link"><%=main.header.feedback.order%></div>
                                 <div class="call-menu__content">
-                                    <div class="call-menu__header"><span class="call-menu__title">Обратная связь</span>
+                                    <div class="call-menu__header"><span class="call-menu__title"><%=main.header.feedback.text%></span>
                                         <div class="call-menu__close">
                                             <svg class="svg-sprite-icon icon-close mobile-menu__close-icon">
                                                 <use xlink:href="img/svg/symbol/sprite.svg#close"></use>
@@ -50,18 +53,18 @@
                                     </div>
                                     <div class="call-menu__body">
                                         <nav class="catalog-nav">
-                                            <div class="call-menu__input-wrapper"><span class="text_call">Имя</span></div>
+                                            <div class="call-menu__input-wrapper"><span class="text_call"><%=main.header.feedback.name%></span></div>
                                             <div class="call-menu__input-wrapper">
-                                                <input class="call-menu__input" placeholder="Введите ваше имя...">
+                                                <input class="call-menu__input" placeholder="<%=main.header.feedback.plh_name%>">
                                                 <div class="search__clear">
                                                     <svg class="svg-sprite-icon icon-close search__clear-icon">
                                                         <use xlink:href="img/svg/symbol/sprite.svg#close"></use>
                                                     </svg>
                                                 </div>
                                             </div>
-                                            <div class="call-menu__input-wrapper"><span class="text_call">Телефон / Email</span></div>
+                                            <div class="call-menu__input-wrapper"><span class="text_call"><%=main.header.feedback.phone%></span></div>
                                             <div class="call-menu__input-wrapper">
-                                                <input class="call-menu__input" placeholder="Введите телефон / почтy...">
+                                                <input class="call-menu__input" placeholder="<%=main.header.feedback.plh_phone%>">
                                                 <div class="search__clear">
                                                     <svg class="svg-sprite-icon icon-close search__clear-icon">
                                                         <use xlink:href="img/svg/symbol/sprite.svg#close"></use>
@@ -69,7 +72,7 @@
                                                 </div>
                                             </div>
                                             <div class="call-menu__input-wrapper">
-                                                <button class="btn">Отправить</button>
+                                                <button class="btn"><%=main.header.feedback.button_send%></button>
                                             </div>
                                         </nav>
                                         <nav class="inform-nav inform-nav--col">
@@ -87,7 +90,7 @@
                     <div class="header__adress header-address">
                         <svg class="svg-sprite-icon icon-map-marker header-address__icon">
                             <use xlink:href="img/svg/symbol/sprite.svg#map-marker"></use>
-                        </svg><span class="header-address__text">Украина, Одесса ул. Набережная 79а</span>
+                        </svg><span class="header-address__text"><%=main.header.address%></span>
                     </div>
                     <div class="header__shop">
                         <div class="header-goods"><span class="header-goods__price">0 &#8372</span><span class="header-goods__count">0 товаров</span></div>
@@ -97,7 +100,7 @@
                         <a href="/cart">
                         <svg class="svg-sprite-icon icon-cart header-basket__icon">
                             <use xlink:href="img/svg/symbol/sprite.svg#cart"></use>
-                        </svg><span class="header-basket__text">Корзина</span>
+                        </svg><span class="header-basket__text"><%=main.header.cart%></span>
                         </a>
                     </div>
                 </div>
@@ -108,7 +111,7 @@
                 <div class="header__content">
                     <nav class="header__main-nav main-nav">
                         <ul class="main-nav__list">
-                            <li class="main-nav__item"><a class="main-nav__link" href="/category?category_name=tross_plomb">Тросовые пломбы</a>
+                            <li class="main-nav__item"><a class="main-nav__link" href="/category?category_name=tross_plomb"><%=main.header.category.tross_plomb%></a>
                                 <div class="main-nav-dropdown-wrapper">
                                     <div class="main-nav-dropdown">
                                         <ul class="main-nav-dropdown__list">
@@ -125,7 +128,7 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="main-nav__item"><a class="main-nav__link" href="/category?category_name=kontr_plomb">Контрольные пломбы</a>
+                            <li class="main-nav__item"><a class="main-nav__link" href="/category?category_name=kontr_plomb"><%=main.header.category.kontr_plomb%></a>
                                 <div class="main-nav-dropdown-wrapper">
                                     <div class="main-nav-dropdown">
                                         <ul class="main-nav-dropdown__list">
@@ -151,7 +154,7 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="main-nav__item"><a class="main-nav__link" href="/category?category_name=indikat_plomb">Индикаторные пломбы</a>
+                            <li class="main-nav__item"><a class="main-nav__link" href="/category?category_name=indikat_plomb"><%=main.header.category.indikat_plomb%></a>
                                 <div class="main-nav-dropdown-wrapper">
                                     <div class="main-nav-dropdown">
                                         <ul class="main-nav-dropdown__list">
@@ -172,7 +175,7 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="main-nav__item"><a class="main-nav__link" href="/category?category_name=kontejner_plomb">Контейнерные пломбы</a>
+                            <li class="main-nav__item"><a class="main-nav__link" href="/category?category_name=kontejner_plomb"><%=main.header.category.kontejner_plomb%></a>
                                 <div class="main-nav-dropdown-wrapper">
                                     <div class="main-nav-dropdown">
                                         <ul class="main-nav-dropdown__list">
@@ -198,7 +201,7 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="main-nav__item"><a class="main-nav__link" href="/category?category_name=sejf_paket">Сейф-Пакеты</a>
+                            <li class="main-nav__item"><a class="main-nav__link" href="/category?category_name=sejf_paket"><%=main.header.category.sejf_paket%></a>
                                 <div class="main-nav-dropdown-wrapper">
                                     <div class="main-nav-dropdown">
                                         <ul class="main-nav-dropdown__list">
@@ -224,14 +227,14 @@
                         <div class="search__body">
                             <form class="search__form" action="/search" method="POST" >
                                 <div class="search__input-wrapper">
-                                    <input class="search__input" name="search_text" placeholder="Я хочу найти...">
+                                    <input class="search__input" name="search_text" placeholder="<%=main.header.search.plh_search%>">
                                     <div class="search__clear">
                                         <svg class="svg-sprite-icon icon-close search__clear-icon">
                                             <use xlink:href="img/svg/symbol/sprite.svg#close"></use>
                                         </svg>
                                     </div>
                                 </div>
-                                <input class="search__btn" type="submit" value="Найти">
+                                <input class="search__btn" type="submit" value="<%=main.header.search.btn_search%>">
                             </form>
                         </div>
                     </div>
@@ -388,19 +391,19 @@
                         <svg class="svg-sprite-icon icon-garanty advantage__icon">
                             <use xlink:href="img/svg/symbol/sprite.svg#garanty"></use>
                         </svg>
-                        <div class="advantage__body"><span class="advantage__title">Гарантия</span><span class="advantage__descr">качество всех товаров</span></div>
+                        <div class="advantage__body"><span class="advantage__title"><%=text.body.advantage.garanty%></span><span class="advantage__descr"><%=text.body.advantage.garanty_text%></span></div>
                     </div>
                     <div class="advantage">
                         <svg class="svg-sprite-icon icon-wallet advantage__icon">
                             <use xlink:href="img/svg/symbol/sprite.svg#wallet"></use>
                         </svg>
-                        <div class="advantage__body"><span class="advantage__title">Оплата</span><span class="advantage__descr">онлайн и наличными</span></div>
+                        <div class="advantage__body"><span class="advantage__title"><%=text.body.advantage.payment%></span><span class="advantage__descr"><%=text.body.advantage.payment_text%></span></div>
                     </div>
                     <div class="advantage">
                         <svg class="svg-sprite-icon icon-delivery advantage__icon">
                             <use xlink:href="img/svg/symbol/sprite.svg#delivery"></use>
                         </svg>
-                        <div class="advantage__body"><span class="advantage__title">Доставка</span><span class="advantage__descr">по всей Украине</span></div>
+                        <div class="advantage__body"><span class="advantage__title"><%=text.body.advantage.delivery%></span><span class="advantage__descr"><%=text.body.advantage.delivery_text%></span></div>
                     </div>
                 </div>
             </div>
@@ -409,77 +412,45 @@
             <div class="container">
                 <div class="hits tabs">
                     <ul class="tabs-navigation hits-navigation">
-                        <li class="hits-navigation__item tabs-navigation__item tabs-navigation__item--active" show-tab="tab-hits"> Хиты продаж</li>
-                        <li class="hits-navigation__item tabs-navigation__item" show-tab="tab-benefits">Выгодно</li>
+                        <li class="hits-navigation__item tabs-navigation__item tabs-navigation__item--active" show-tab="tab-hits"><%=text.body.hits%></li>
+                        <li class="hits-navigation__item tabs-navigation__item" show-tab="tab-benefits"><%=text.body.benefits%></li>
                     </ul>
                     <div class="tabs__body hits__body">
                         <div class="tab tab--active tab-hits">
                             <div class="products-line-slider">
                                 <div class="js-products-line-slider">
+                                    <%hits.forEach(function(p){%>
                                     <div class="product-prev">
-                                        <div class="product-prev__header">
-                                            <div class="js-product-prev__slider">
-                                                <div class="product-prev__img-wrapper" data-color="#fa5a35"><img class="product-prev__img" src="../../img/content/products/indikatornyje/favorit.jpg" alt="Изображение товара"></div>
-                                                <div class="product-prev__img-wrapper" data-color="#06cd57"><img class="product-prev__img" src="../../img/content/products/indikatornyje/favorit-chert.jpg" alt="Изображение товара"></div>
-                                                <div class="product-prev__img-wrapper" data-color="#2da7ff"><img class="product-prev__img" src="../../img/content/products/indikatornyje/favorit.jpg" alt="Изображение товара"></div>
+                                        <a style="color: black" href="<%=p.link%>">
+                                            <div class="product-prev__header">
+                                                <div class="js-product-prev__slider">
+                                                    <%for(key in p.image){%>
+                                                    <%if((p.image[key].match(/(chert.jpg)/g))===null){%>
+                                                    <div class="product-prev__img-wrapper" data-color="<%=p.colors[key]%>"><img class="product-prev__img" src="<%=p.image[key]%>" alt="Изображение товара"></div>
+                                                    <%}%>
+                                                    <%}%>
+                                                </div>
                                             </div>
-                                        </div>
+                                        </a>
                                         <div class="product-prev__body">
-                                            <div class="product-prev__info"><span class="product-prev__title">Фаворит пломба защелка</span><span class="product-prev__about">Пластик</span></div>
-                                            <div class="product-prev__price"><span class="product-prev__price-current">1.68 грн.</span><span class="product-prev__price-old">1.8 грн.</span></div>
+                                            <a style="color: black" href="<%=p.link%>">
+                                                <div class="product-prev__info"><span class="product-prev__title"><%=p.plomb[lang]%></span><span class="product-prev__about">Пластик</span></div>
+                                                <div class="product-prev__price"><span class="product-prev__price-current"><%=p.price[lang]%></span><span class="product-prev__price-old">1.8 грн.</span></div>
+                                            </a>
                                             <div class="product-prev__colors"></div>
                                         </div>
-                                        <div class="product-prev__footer">
-                                            <button class="btn">В корзину</button>
-                                        </div>
-                                    </div>
-                                    <div class="product-prev">
-                                        <div class="product-prev__header">
-                                            <div class="js-product-prev__slider">
-                                                <div class="product-prev__img-wrapper" data-color="#fa5a35"><img class="product-prev__img" src="../../img/content/products/indikatornyje/plomba-nakl.jpg" alt="Изображение товара"></div>
-                                                <div class="product-prev__img-wrapper" data-color="#2da7ff"><img class="product-prev__img" src="../../img/content/products/indikatornyje/plomba-nakl-chert.jpg" alt="Изображение товара"></div>
+                                        <form class="plomb_form">
+                                            <div class="product-prev__footer">
+                                                <input type="hidden" name="plombName" value="<%=p.plomb_name%>"/>
+                                                <%if(typeof products.items[p.plomb_name]==="undefined"){%>
+                                                    <input type="submit" value="В корзину"  class="btn">
+                                                <%}else{%>
+                                                    <input type="submit" value="Добавлено"  class="btn btnAdd">
+                                                <%}%>
                                             </div>
-                                        </div>
-                                        <div class="product-prev__body">
-                                            <div class="product-prev__info"><span class="product-prev__title">Пломба наклейка</span><span class="product-prev__about">20х100 мм</span></div>
-                                            <div class="product-prev__price"><span class="product-prev__price-current">1.7 грн.</span><span class="product-prev__price-old">1.85 грн.</span></div>
-                                            <div class="product-prev__colors"></div>
-                                        </div>
-                                        <div class="product-prev__footer">
-                                            <button class="btn">В корзину</button>
-                                        </div>
+                                        </form>
                                     </div>
-                                    <div class="product-prev">
-                                        <div class="product-prev__header">
-                                            <div class="js-product-prev__slider">
-                                                <div class="product-prev__img-wrapper" data-color="#fa5a35"><img class="product-prev__img" src="../../img/content/products/kontrolnyje/universal-220.jpg" alt="Изображение товара"></div>
-                                                <div class="product-prev__img-wrapper" data-color="#2da7ff"><img class="product-prev__img" src="../../img/content/products/kontrolnyje/universal-220-chert.jpg" alt="Изображение товара"></div>
-                                            </div>
-                                        </div>
-                                        <div class="product-prev__body">
-                                            <div class="product-prev__info"><span class="product-prev__title">Универсал 220 пломба затяжка</span><span class="product-prev__about">Пластик</span></div>
-                                            <div class="product-prev__price"><span class="product-prev__price-current">1.4 грн.</span><span class="product-prev__price-old">1.5 грн.</span></div>
-                                            <div class="product-prev__colors"></div>
-                                        </div>
-                                        <div class="product-prev__footer">
-                                            <button class="btn">В корзину</button>
-                                        </div>
-                                    </div>
-                                    <div class="product-prev">
-                                        <div class="product-prev__header">
-                                            <div class="js-product-prev__slider">
-                                                <div class="product-prev__img-wrapper" data-color="#f8ffea"><img class="product-prev__img" src="../../img/content/products/seif-paket/seif-paket-20x29.jpg" alt="Изображение товара"></div>
-                                            </div>
-                                        </div>
-                                        <div class="product-prev__body">
-                                            <div class="product-prev__info"><span class="product-prev__title">Сейф-Пакет</span><span class="product-prev__about">30х42см LDPE пленка, 70 микрон</span></div>
-                                            <div class="product-prev__price"><span class="product-prev__price-current">4.40 грн.</span><span class="product-prev__price-old">4.55 грн.</span></div>
-                                            <div class="product-prev__colors"></div>
-                                        </div>
-                                        <div class="product-prev__footer">
-                                            <button class="btn">В корзину</button>
-                                        </div>
-                                    </div>
+                                    <%});%>
                                 </div>
                                 <div class="products-line-slider__navigation">
                                     <div class="products-line-slider__btn products-line-slider__btn--prev">
@@ -499,74 +470,38 @@
                         <div class="tab tab-benefits">
                             <div class="products-line-slider">
                                 <div class="js-products-line-slider">
+                                    <%benefits.forEach(function(p){%>
                                     <div class="product-prev">
-                                        <div class="product-prev__header">
-                                            <div class="js-product-prev__slider">
-                                                <div class="product-prev__img-wrapper" data-color="#fa5a35"><img class="product-prev__img" src="../../img/content/products/product-1/favorit.jpg" alt="Изображение товара"></div>
-                                                <div class="product-prev__img-wrapper" data-color="#06cd57"><img class="product-prev__img" src="../../img/content/products/product-1/favorit.jpg" alt="Изображение товара"></div>
-                                                <div class="product-prev__img-wrapper" data-color="#2da7ff"><img class="product-prev__img" src="../../img/content/products/product-1/favorit.jpg" alt="Изображение товара"></div>
+                                        <a style="color: black" href="<%=p.link%>">
+                                            <div class="product-prev__header">
+                                                <div class="js-product-prev__slider">
+                                                    <%for(key in p.image){%>
+                                                    <%if((p.image[key].match(/(chert.jpg)/g))===null){%>
+                                                    <div class="product-prev__img-wrapper" data-color="<%=p.colors[key]%>"><img class="product-prev__img" src="<%=p.image[key]%>" alt="Изображение товара"></div>
+                                                    <%}%>
+                                                    <%}%>
+                                                </div>
                                             </div>
-                                        </div>
+                                        </a>
                                         <div class="product-prev__body">
-                                            <div class="product-prev__info"><span class="product-prev__title">Фаворит пломба защелка</span><span class="product-prev__about">Пластик</span></div>
-                                            <div class="product-prev__price"><span class="product-prev__price-current">1.68 грн.</span><span class="product-prev__price-old">1.8 грн.</span></div>
+                                            <a style="color: black" href="<%=p.link%>">
+                                                <div class="product-prev__info"><span class="product-prev__title"><%=p.plomb.ru%></span><span class="product-prev__about">Пластик</span></div>
+                                                <div class="product-prev__price"><span class="product-prev__price-current"><%=p.price.ru%></span><span class="product-prev__price-old">1.8 грн.</span></div>
+                                            </a>
                                             <div class="product-prev__colors"></div>
                                         </div>
-                                        <div class="product-prev__footer">
-                                            <button class="btn">В корзину</button>
-                                        </div>
-                                    </div>
-                                    <div class="product-prev">
-                                        <div class="product-prev__header">
-                                            <div class="js-product-prev__slider">
-                                                <div class="product-prev__img-wrapper" data-color="#fa5a35"><img class="product-prev__img" src="../../img/content/products/product-1/favorit.jpg" alt="Изображение товара"></div>
-                                                <div class="product-prev__img-wrapper" data-color="#06cd57"><img class="product-prev__img" src="../../img/content/products/product-1/favorit.jpg" alt="Изображение товара"></div>
-                                                <div class="product-prev__img-wrapper" data-color="#2da7ff"><img class="product-prev__img" src="../../img/content/products/product-1/favorit.jpg" alt="Изображение товара"></div>
+                                        <form class="plomb_form">
+                                            <div class="product-prev__footer">
+                                                <input type="hidden" name="plombName" value="<%=p.plomb_name%>"/>
+                                                <%if(typeof products.items[p.plomb_name]==="undefined"){%>
+                                                    <input type="submit" value="В корзину"  class="btn">
+                                                <%}else{%>
+                                                    <input type="submit" value="Добавлено"  class="btn btnAdd">
+                                                <%}%>
                                             </div>
-                                        </div>
-                                        <div class="product-prev__body">
-                                            <div class="product-prev__info"><span class="product-prev__title">Фаворит пломба защелка</span><span class="product-prev__about">Пластик</span></div>
-                                            <div class="product-prev__price"><span class="product-prev__price-current">1.68 грн.</span><span class="product-prev__price-old">1.8 грн.</span></div>
-                                            <div class="product-prev__colors"></div>
-                                        </div>
-                                        <div class="product-prev__footer">
-                                            <button class="btn">В корзину</button>
-                                        </div>
+                                        </form>
                                     </div>
-                                    <div class="product-prev">
-                                        <div class="product-prev__header">
-                                            <div class="js-product-prev__slider">
-                                                <div class="product-prev__img-wrapper" data-color="#fa5a35"><img class="product-prev__img" src="../../img/content/products/product-1/favorit.jpg" alt="Изображение товара"></div>
-                                                <div class="product-prev__img-wrapper" data-color="#06cd57"><img class="product-prev__img" src="../../img/content/products/product-1/favorit.jpg" alt="Изображение товара"></div>
-                                                <div class="product-prev__img-wrapper" data-color="#2da7ff"><img class="product-prev__img" src="../../img/content/products/product-1/favorit.jpg" alt="Изображение товара"></div>
-                                            </div>
-                                        </div>
-                                        <div class="product-prev__body">
-                                            <div class="product-prev__info"><span class="product-prev__title">Фаворит пломба защелка</span><span class="product-prev__about">Пластик</span></div>
-                                            <div class="product-prev__price"><span class="product-prev__price-current">1.68 грн.</span><span class="product-prev__price-old">1.8 грн.</span></div>
-                                            <div class="product-prev__colors"></div>
-                                        </div>
-                                        <div class="product-prev__footer">
-                                            <button class="btn">В корзину</button>
-                                        </div>
-                                    </div>
-                                    <div class="product-prev">
-                                        <div class="product-prev__header">
-                                            <div class="js-product-prev__slider">
-                                                <div class="product-prev__img-wrapper" data-color="#fa5a35"><img class="product-prev__img" src="../../img/content/products/product-1/favorit.jpg" alt="Изображение товара"></div>
-                                                <div class="product-prev__img-wrapper" data-color="#06cd57"><img class="product-prev__img" src="../../img/content/products/product-1/favorit.jpg" alt="Изображение товара"></div>
-                                                <div class="product-prev__img-wrapper" data-color="#2da7ff"><img class="product-prev__img" src="../../img/content/products/product-1/favorit.jpg" alt="Изображение товара"></div>
-                                            </div>
-                                        </div>
-                                        <div class="product-prev__body">
-                                            <div class="product-prev__info"><span class="product-prev__title">Фаворит пломба защелка</span><span class="product-prev__about">Пластик</span></div>
-                                            <div class="product-prev__price"><span class="product-prev__price-current">1.68 грн.</span><span class="product-prev__price-old">1.8 грн.</span></div>
-                                            <div class="product-prev__colors"></div>
-                                        </div>
-                                        <div class="product-prev__footer">
-                                            <button class="btn">В корзину</button>
-                                        </div>
-                                    </div>
+                                    <%});%>
                                 </div>
                                 <div class="products-line-slider__navigation">
                                     <div class="products-line-slider__btn products-line-slider__btn--prev">
@@ -587,65 +522,65 @@
                 </div>
             </div>
         </section>
-        <!--include pages/index/information-->
-        <section class="s-maininform">
+        <section id="l-information" class="info">
             <div class="container">
-                <h2 class="titles-section">Информация о магазине</h2>
-                <div class="maininform tabs" id="l-information">
-                    <div class="tabs__body maininform__body">
-                        <div class="tab tab--active tab-delivery">
-                            <p class="text">Доставка осуществляется в любой населенный пункт Украины, где есть представительство удобного Вам перевозчика. Доставка производится до склада перевозчика или, по согласованию с Клиентом, до его дверей. Обычно, Вы получите свой товар через 48 часов с момента его оплаты или выхода с производства (за исключением праздничных и выходных дней). В случае, если доставка будет занимать больше времени, Вы будете проинформированы об этом Вашим менеджером в индивидуальном порядке.</p>
-                            <p class="text">Виды доставки:</p>
-                            <ol>
-                                <li class="text-li">Удобным Вам перевозчиком (зачастую это Новая почта, Ночной экспресс и д.р.);</li>
-                                <li class="text-li">Доставка с оплатой наложенным платежом (оплата товара при получении — Новая почта), затраты за услугу по пересылке денег, оплачивает покупатель;</li>
-                                <li class="text-li">По согласованию с Вашим курирующим менеджером.</li>
-                            </ol>
-                            <p class="text">Стоимость доставки Вы можете уточнить у перевозчика или её Вам сообщит Ваш курирующий менеджер. Также, мы можем включить стоимость доставки в стоимость товара. Объемно-весовые параметры груза Вы найдете в описании самой продукции.</p>
-                        </div>
-                        <div class="tab tab-advantages">
-                            <p class="text">Оплата заказа</p>
-                            <ol>
-                                <li class="text-li">Кредитной картой любого банка по системе liqpay в разделе корзина (тарифы)</li>
-                                <li class="text-li">Безналичный расчет</li>
-                                <li class="text-li">На карту Приватбанка в Privat24, через терминал или кассу банка (реквизиты для платежа вы можете получить у менеджера)</li>
-                                <li class="text-li">Наложенным платежом при получении на Новой почте (стоимость услуги составляет 20 грн + 2% от суммы перевода)</li>
-                                <li class="text-li">Наличными в офисе при получении</li>
-                            </ol>
-                        </div>
-                        <div class="tab tab-about">
-                            <p class="text">У нас вы найдёте охранные системы, системы видеонаблюдения, домофоны, охранные пломбы и сейф-пакеты. Так же мы производим профессиональный монтаж любой сложности в кротчайшие сроки и с высоким качеством работы.</p>
-                            <p class="text">Мы заботимся о Вашем времени и комфорте, поэтому заказанные Вами товары будут доставлены в любое удобное для Вас место в кротчайший срок.</p>
-                            <p class="text">Мы осуществляем доставку по всему миру. В ряде стран у нас есть представительства, и нашу продукцию Вы можете получить через них. Стоимость доставки рассчитывается индивидуально, в зависимости от веса и объема груза, удаленности склада назначения, вида доставки.
-                            <p class="text">Мы заботимся о Вашем времени и комфорте, поэтому заказанные Вами товары будут доставлены в любое удобное для Вас место в кротчайший срок.</p>
-                            </p>
-                        </div>
-                        <div class="tab tab-company">
-                            <div class="brands__wrapper">
-                                <ul class="brands__list brands__list--small">
-                                    <li class="brands__item"><a class="brand" href=""><img class="brand__img" src="../../img/content/brands/may.png"><span class="brand__name">flyua</span></a></li>
-                                    <li class="brands__item"><a class="brand" href=""><img class="brand__img" src="../../img/content/brands/privatlogo.png"><span class="brand__name">Privat Bank</span></a></li>
-                                    <li class="brands__item"><a class="brand" href=""><img class="brand__img" src="../../img/content/brands/may.png"><span class="brand__name">flyua</span></a></li>
-                                    <li class="brands__item"><a class="brand" href=""><img class="brand__img" src="../../img/content/brands/privatlogo.png"><span class="brand__name">Privat Bank</span></a></li>
-                                    <li class="brands__item"><a class="brand" href=""><img class="brand__img" src="../../img/content/brands/may.png"><span class="brand__name">flyua</span></a></li>
-                                    <li class="brands__item"><a class="brand" href=""><img class="brand__img" src="../../img/content/brands/privatlogo.png"><span class="brand__name">Privat Bank</span></a></li>
+                <div class="product__body">
+                    <div class="product-details tabs">
+                        <div class="mobile-scroll-wrapper">
+                            <div class="mobile-scroll-inner">
+                                <ul class="tabs-navigation product-details-navigation maininform-navigation">
+                                    <li class="product-details-navigation__item tabs-navigation__item tabs-navigation__item--active" id="tab-payment"  show-tab="tab-payment"><%=main.body.details.payment.head_text%></li>
+                                    <li class="product-details-navigation__item tabs-navigation__item tabs-navigation__item" id="tab-delivery" show-tab="tab-delivery"><%=main.body.details.delivery.head_title%></li>
+                                    <!--li(show-tab="tab-about").product-details-navigation__item.tabs-navigation__item.tabs-navigation__item О нас-->
+                                    <!--li(show-tab="tab-company").product-details-navigation__item.tabs-navigation__item.tabs-navigation__item Компании-сотрудники-->
                                 </ul>
                             </div>
                         </div>
+                        <div class="tabs__body product-details__body">
+                            <div class="tab tab-payment tab--active">
+                                <div class="content-block">
+                                    <h2 class="title-section"><%=main.body.details.payment.head_text%></h2>
+                                    <div class="product-table__wrapper"><span class="product-table__title"><%=main.body.details.payment.hea%></span>
+                                        <table class="product-table">
+                                            <tbody>
+                                            <%for(let i=0; i<main.body.details.payment.table_text.length;i++){%>
+                                                <tr class="product-table__row">
+                                                    <td class="product-table__cell"><%=main.body.details.payment.table_text[i]%></td>
+                                                </tr>
+                                            <%}%>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab tab-delivery">
+                                <div class="content-block">
+                                    <h2 class="title-section"><%=main.body.details.delivery.head_title%></h2>
+                                    <p class="text"><%=main.body.details.delivery.head_text%></p>
+                                    <div class="product-table__wrapper"><span class="product-table__title"><%=main.body.details.delivery.table_name%></span>
+                                        <table class="product-table">
+                                            <tbody>
+                                            <%for(let i=0; i<main.body.details.delivery.table_text.length;i++){%>
+                                            <tr class="product-table__row">
+                                                <td class="product-table__cell"><%=main.body.details.delivery.table_text[i]%></td>
+                                            </tr>
+                                            <%}%>
+                                            </tbody>
+                                        </table>
+                                    </div><span class="product-table__title"><%=main.body.details.delivery.price%></span>
+                                    <p class="text"><%=main.body.details.delivery.price_text%></p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <ul class="tabs-navigation maininform-navigation">
-                        <li class="maininform-navigation__item tabs-navigation__item tabs-navigation__item--active" show-tab="tab-delivery"> Доставка</li>
-                        <li class="maininform-navigation__item tabs-navigation__item" show-tab="tab-advantages">Оплата</li>
-                        <li class="maininform-navigation__item tabs-navigation__item" show-tab="tab-about">O нас</li>
-                        <li class="maininform-navigation__item tabs-navigation__item" show-tab="tab-company">Компании-сотрудники</li>
-                    </ul>
                 </div>
             </div>
-        </section>
+            </section>
+        <!--include pages/index/information-->
     </div>
     <footer class="footer">
         <div class="footer__main">
-            <div class="container"><span class="plombix">Plombix</span><span class="plombix__adres">Украина, Одесса ул. Набережная 76а</span></div>
+            <div class="container"><span class="plombix">Plombix</span><span class="plombix__adres"><%=main.footer.address%></span></div>
         </div>
         <div class="footer__socials">
             <div class="container">
@@ -658,12 +593,15 @@
             </div>
         </div>
         <div class="footer__bottom">
-            <div class="container"><span class="copyright">Copyright © 2013-2019 Plombix™</span><a class="footer__personal-data" href="">Политика обработки персональных данных</a></div>
+            <div class="container"><span class="copyright">Copyright © 2013-2019 Plombix™</span><a class="footer__personal-data" href=""><%=main.footer.copyright%></a></div>
         </div>
     </footer>
 </div>
 <script src="js/libs/jquery-3.3.1.min.js"></script>
 <script src="js/libs/libs.min.js"></script>
 <script src="js/main.js"></script>
+<script src="js/ajax.js"></script>
+<script src="js/toast.js"></script>
 </body>
 </html>
+

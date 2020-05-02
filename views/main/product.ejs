@@ -2,11 +2,13 @@
 <html lang="ru-RU">
 <head>
     <meta charset="utf-8">
-    <title>Пломба название</title><!--[if IE]>
+    <title><%=plomba[0].plomb_search%></title><!--[if IE]>
     <meta http-equiv="X-UA-Compatible" content="IE = edge"><![endif]-->
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="keywords" content="">
-    <link rel="stylesheet" type="text/css" href="css/styles.min.css"><!--[if lt IE 9]>
+    <link rel="stylesheet" type="text/css" href="css/styles.min.css">
+    <link href="css/toast.css" rel="stylesheet">
+    <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script><![endif]-->
 </head>
 <body class="product-page">
@@ -17,17 +19,18 @@
                 <div class="header__content">
                     <nav class="header__nav inform-nav">
                         <ul class="inform-nav__list">
-                            <li class="inform-nav__item"><a class="inform-nav__link" href="/products">ТОВАРЫ</a></li>
-                            <li class="inform-nav__item"><a class="inform-nav__link" href="#l-information">ДОСТАВКА</a></li>
-                            <li class="inform-nav__item"><a class="inform-nav__link" href="#l-information">О НАС</a></li>
-                            <li class="inform-nav__item"><a class="inform-nav__link" href="#l-information">ОПЛАТА</a></li>
+                            <li class="inform-nav__item"><a class="inform-nav__link" href="/products"><%=main.header.nav.product%></a></li>
+                            <li class="inform-nav__item"><a class="inform-nav__link" href="#tab-delivery"><%=main.header.nav.delivery%></a></li>
+                            <li class="inform-nav__item"><a class="inform-nav__link" href="#l-information"><%=main.header.nav.about%></a></li>
+                            <li class="inform-nav__item"><a class="inform-nav__link" href="#tab-payment"><%=main.header.nav.payments%></a></li>
                         </ul>
                     </nav>
                     <nav class="header__nav header__nav--right inform-nav">
                         <ul class="inform-nav__list">
-                            <li class="inform-nav__item"><a class="inform-nav__link" href="">УКР</a></li>
-                            <li class="inform-nav__item"><a class="inform-nav__link" href="">РУС</a></li>
-                            <li class="inform-nav__item"><a class="inform-nav__link" href="">ENG</a></li>
+                            <li class="inform-nav__item"><a class="inform-nav__link change_lang" href="/change-language?language=uk">УКР</a></li>
+                            <li class="inform-nav__item"><a class="inform-nav__link change_lang" href="/change-language?language=ru">РУС</a></li>
+                            <li class="inform-nav__item"><a class="inform-nav__link change_lang" href="/change-language?language=pl">PL</a></li>
+                            <li class="inform-nav__item"><a class="inform-nav__link change_lang" href="/change-language?language=en">ENG</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -35,24 +38,69 @@
         </div>
         <div class="header__main">
             <div class="container">
-                <div class="header__content"><a class="header__logo logo" href="/"><img class="logo__img" src="img/general/logo.png" alt="Логотип"></a>
+                <div class="header__content"><a class="header__logo logo" href="/"><img class="logo__img" src="../../img/general/logo.png" alt="Логотип"></a>
                     <div class="header__phones">
-                        <div class="header__item header__item--mobile"><a class="header__phone" href="tel:380-95-35-125">+380-95-35-125</a><a class="header__link" href="">Заказать звонок</a></div>
+                        <div class="header__item header__item--mobile"><a class="header__phone" href="tel:380-95-35-125"><%=main.header.feedback.phone_number%></a>
+                            <div class="call-menu">
+                                <div class="header__link"><%=main.header.feedback.order%></div>
+                                <div class="call-menu__content">
+                                    <div class="call-menu__header"><span class="call-menu__title"><%=main.header.feedback.text%></span>
+                                        <div class="call-menu__close">
+                                            <svg class="svg-sprite-icon icon-close mobile-menu__close-icon">
+                                                <use xlink:href="img/svg/symbol/sprite.svg#close"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="call-menu__body">
+                                        <nav class="catalog-nav">
+                                            <div class="call-menu__input-wrapper"><span class="text_call"><%=main.header.feedback.name%></span></div>
+                                            <div class="call-menu__input-wrapper">
+                                                <input class="call-menu__input" placeholder="<%=main.header.feedback.plh_name%>">
+                                                <div class="search__clear">
+                                                    <svg class="svg-sprite-icon icon-close search__clear-icon">
+                                                        <use xlink:href="img/svg/symbol/sprite.svg#close"></use>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                            <div class="call-menu__input-wrapper"><span class="text_call"><%=main.header.feedback.phone%></span></div>
+                                            <div class="call-menu__input-wrapper">
+                                                <input class="call-menu__input" placeholder="<%=main.header.feedback.plh_phone%>">
+                                                <div class="search__clear">
+                                                    <svg class="svg-sprite-icon icon-close search__clear-icon">
+                                                        <use xlink:href="img/svg/symbol/sprite.svg#close"></use>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                            <div class="call-menu__input-wrapper">
+                                                <button class="btn"><%=main.header.feedback.button_send%></button>
+                                            </div>
+                                        </nav>
+                                        <nav class="inform-nav inform-nav--col">
+                                            <ul class="call-menu__list">
+                                                <li class="call-menu__item"><span class="catalog-nav__text">Мы ответим вам в течении нескольких часов</span></li>
+                                                <li class="inform-nav__item"><a class="inform-nav__link" href="https://finacademy.net/politika-konfidencialnosli-ukraina">Политика обработки персональных данных</a></li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <div class="header__item"><a class="header__phone" href="mail:mail">MAIL</a><a class="header__link" href="">Связаться с нами</a></div>
                     </div>
                     <div class="header__adress header-address">
                         <svg class="svg-sprite-icon icon-map-marker header-address__icon">
                             <use xlink:href="img/svg/symbol/sprite.svg#map-marker"></use>
-                        </svg><span class="header-address__text">Украина, Одесса ул. Набережная 79а</span>
+                        </svg><span class="header-address__text"><%=main.header.address%></span>
                     </div>
                     <div class="header__shop">
                         <div class="header-goods"><span class="header-goods__price">0 &#8372</span><span class="header-goods__count">0 товаров</span></div>
                     </div>
+
                     <div class="header-basket">
                         <a href="/cart">
                             <svg class="svg-sprite-icon icon-cart header-basket__icon">
                                 <use xlink:href="img/svg/symbol/sprite.svg#cart"></use>
-                            </svg><span class="header-basket__text">Корзина</span>
+                            </svg><span class="header-basket__text"><%=main.header.cart%></span>
                         </a>
                     </div>
                 </div>
@@ -63,7 +111,7 @@
                 <div class="header__content">
                     <nav class="header__main-nav main-nav">
                         <ul class="main-nav__list">
-                            <li class="main-nav__item"><a class="main-nav__link" href="/category?category_name=tross_plomb">Тросовые пломбы</a>
+                            <li class="main-nav__item"><a class="main-nav__link" href="/category?category_name=tross_plomb"><%=main.header.category.tross_plomb%></a>
                                 <div class="main-nav-dropdown-wrapper">
                                     <div class="main-nav-dropdown">
                                         <ul class="main-nav-dropdown__list">
@@ -80,7 +128,7 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="main-nav__item"><a class="main-nav__link" href="/category?category_name=kontr_plomb">Контрольные пломбы</a>
+                            <li class="main-nav__item"><a class="main-nav__link" href="/category?category_name=kontr_plomb"><%=main.header.category.kontr_plomb%></a>
                                 <div class="main-nav-dropdown-wrapper">
                                     <div class="main-nav-dropdown">
                                         <ul class="main-nav-dropdown__list">
@@ -106,7 +154,7 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="main-nav__item"><a class="main-nav__link" href="/category?category_name=indikat_plomb">Индикаторные пломбы</a>
+                            <li class="main-nav__item"><a class="main-nav__link" href="/category?category_name=indikat_plomb"><%=main.header.category.indikat_plomb%></a>
                                 <div class="main-nav-dropdown-wrapper">
                                     <div class="main-nav-dropdown">
                                         <ul class="main-nav-dropdown__list">
@@ -127,7 +175,7 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="main-nav__item"><a class="main-nav__link" href="/category?category_name=kontejner_plomb">Контейнерные пломбы</a>
+                            <li class="main-nav__item"><a class="main-nav__link" href="/category?category_name=kontejner_plomb"><%=main.header.category.kontejner_plomb%></a>
                                 <div class="main-nav-dropdown-wrapper">
                                     <div class="main-nav-dropdown">
                                         <ul class="main-nav-dropdown__list">
@@ -153,7 +201,7 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="main-nav__item"><a class="main-nav__link" href="/category?category_name=sejf_paket">Сейф-Пакеты</a>
+                            <li class="main-nav__item"><a class="main-nav__link" href="/category?category_name=sejf_paket"><%=main.header.category.sejf_paket%></a>
                                 <div class="main-nav-dropdown-wrapper">
                                     <div class="main-nav-dropdown">
                                         <ul class="main-nav-dropdown__list">
@@ -177,16 +225,16 @@
                             <use xlink:href="img/svg/symbol/sprite.svg#search"></use>
                         </svg>
                         <div class="search__body">
-                            <form class="search__form" action="/search">
+                            <form class="search__form" action="/search" method="POST" >
                                 <div class="search__input-wrapper">
-                                    <input class="search__input" placeholder="Я хочу найти...">
+                                    <input class="search__input" name="search_text" placeholder="<%=main.header.search.plh_search%>">
                                     <div class="search__clear">
                                         <svg class="svg-sprite-icon icon-close search__clear-icon">
                                             <use xlink:href="img/svg/symbol/sprite.svg#close"></use>
                                         </svg>
                                     </div>
                                 </div>
-                                    <input class="search__btn" type="submit" value="Найти">
+                                <input class="search__btn" type="submit" value="<%=main.header.search.btn_search%>">
                             </form>
                         </div>
                     </div>
@@ -250,12 +298,55 @@
                             </nav>
                         </div>
                         <div class="mobile-menu__footer">
-                            <div class="mobile-menu__phone"><a class="mobile-menu__phone-number" href="tel:8800553535">+8800553535</a><a class="mobile-menu__phone-link" href="">Заказать звонок</a></div>
+                            <div class="mobile-menu__phone"><a class="mobile-menu__phone-number" href="tel:8800553535">+8800553535</a><span class="header__link-helper">Заказать звонок</span></div>
                             <div class="mobile-menu__phone"><a class="mobile-menu__phone-number" href="tel:8800553535">+8800553535</a><span class="mobile-menu__phone-text">Звонок бесплатный</span></div>
                         </div>
+                        <div class="call-menu call-menu-helper">
+                            <div class="call-menu__content">
+                                <div class="call-menu__header"><span class="call-menu__title">Обратная связь</span>
+                                    <div class="call-menu__close">
+                                        <svg class="svg-sprite-icon icon-close mobile-menu__close-icon">
+                                            <use xlink:href="img/svg/symbol/sprite.svg#close"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="call-menu__body">
+                                    <nav class="catalog-nav">
+                                        <div class="call-menu__input-wrapper"><span class="text_call">Имя</span></div>
+                                        <div class="call-menu__input-wrapper">
+                                            <input class="call-menu__input" placeholder="Введите ваше имя...">
+                                            <div class="search__clear">
+                                                <svg class="svg-sprite-icon icon-close search__clear-icon">
+                                                    <use xlink:href="img/svg/symbol/sprite.svg#close"></use>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                        <div class="call-menu__input-wrapper"><span class="text_call">Телефон / Email</span></div>
+                                        <div class="call-menu__input-wrapper">
+                                            <input class="call-menu__input" placeholder="Введите телефон / почтy...">
+                                            <div class="search__clear">
+                                                <svg class="svg-sprite-icon icon-close search__clear-icon">
+                                                    <use xlink:href="img/svg/symbol/sprite.svg#close"></use>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                        <div class="call-menu__input-wrapper">
+                                            <button class="btn">Отправить</button>
+                                        </div>
+                                    </nav>
+                                    <nav class="inform-nav inform-nav--col">
+                                        <ul class="call-menu__list">
+                                            <li class="call-menu__item"><span class="catalog-nav__text">Мы ответим вам в течении нескольких часов</span></li>
+                                            <li class="inform-nav__item"><a class="inform-nav__link" href="https://finacademy.net/politika-konfidencialnosli-ukraina">Политика обработки персональных данных</a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
-                <div class="mobile__logo logo"><img class="logo__img" src="img/general/logo.png" alt="Логотип"></div>
+                <div class="mobile__logo logo"><img class="logo__img" src="../../img/general/logo.png" alt="Логотип"></div>
                 <div class="search">
                     <form class="search__form">
                         <div class="search__input-wrapper">
@@ -327,41 +418,41 @@
                         <div class="product-info">
                             <div class="product-info__header">
                                 <h1 class="title-page"><%plomba.forEach(function (p) { %>
-                                        <%= p.plomb.ru %>
+                                        <%= p.plomb[lang] %>
                                     <%});%>
                                 </h1>
                             </div>
                             <div class="product-info__body">
                                 <div class="product-info__row">
-                                    <div class="product-material">Метериал: <%plomba.forEach(function (p) { %>
-                                            <%= p.material.ru %>
+                                    <div class="product-material"><%=text.body.plomb.material%>: <%plomba.forEach(function (p) { %>
+                                            <%= p.material[lang] %>
                                         <%});%>
                                     </div>
-                                    <div class="product-info__articul"><span class="product__text">Артикул: <b>1337</b></span></div>
+                                    <div class="product-info__articul"><span class="product__text"><%=text.body.plomb.article%>: <b>1337</b></span></div>
                                 </div>
                                 <div class="product-info__row">
-                                    <div class="product-color"><span class="product__text">Выберите цвет</span>
+                                    <div class="product-color"><span class="product__text"><%=text.body.plomb.color_choose%></span>
                                         <ul class="color-list">
                                             <li class="color-list__item" style="background-color:#fa5a35"></li>
                                             <li class="color-list__item" style="background-color:#06cd57"></li>
                                             <li class="color-list__item" style="background-color:#2da7ff"></li>
                                         </ul>
                                     </div>
-                                    <div class="product-avaible"><span class="product__text">В наличии</span></div>
+                                    <div class="product-avaible"><span class="product__text"><%=text.body.plomb.instock%></span></div>
                                 </div>
                                 <div class="product-info__row">
                                     <div class="product-price"><span class="product-price__old">1.8 грн.</span><span class="product-price__current"><%plomba.forEach(function (p) { %>
-                                                                                                                                                    <%=p.price.ru%>
+                                                                                                                                                    <%=p.price[lang]%>
                                                                                                                                                     <%});%>
-                                                                                                                                                    </span><a class="product-price__low" href="">Нашли дешевле?</a></div>
+                                                                                                                                                    </span><a class="product-price__low" href=""><%=text.body.plomb.chipper%></a></div>
                                         <form class="plomb_form">
                                             <div class="product-actions">
                                                 <input type="hidden" name="plombName" value="<%=plomba[0].plomb_name%>"/>
                                                 <input class="search__count" name="count_plombs" placeholder="100">
                                                 <%if(typeof products.items[plomba[0].plomb_name]==="undefined"){%>
-                                                    <input type="submit" value="В корзину"  class="btn">
+                                                    <input type="submit" value="<%=text.body.plomb.button_cart%>"  class="btn">
                                                 <%}else{%>
-                                                    <input type="submit" value="Добавлено"  class="btn btnAdd">
+                                                    <input type="submit" value="<%=text.body.plomb.added%>"  class="btn btnAdd">
                                                 <%}%>
                                             </div>
                                         </form>
@@ -373,14 +464,13 @@
                                         <div class="product-info-advantage__header">
                                             <svg class="svg-sprite-icon icon-wallet product-info-advantage__icon">
                                                 <use xlink:href="img/svg/symbol/sprite.svg#wallet"></use>
-                                            </svg><span class="product-info-advantage__title">Оплата</span>
+                                            </svg><span class="product-info-advantage__title"><%=text.body.details.payment_title%></span>
                                         </div>
                                         <div class="product-info-advantage__body">
                                             <ul class="product-list product-list--advantage">
-                                                <li class="product-list__item">Наличные</li>
-                                                <li class="product-list__item">Электронне деньги</li>
-                                                <li class="product-list__item">Приватбанк</li>
-                                                <li class="product-list__item">Безналичная оплата</li>
+                                                <%for(let i=0;i<text.body.details.payment.length;i++){%>
+                                                    <li class="product-list__item"><%=text.body.details.payment[i]%></li>
+                                                <%}%>
                                             </ul>
                                         </div>
                                     </div>
@@ -388,46 +478,43 @@
                                         <div class="product-info-advantage__header">
                                             <svg class="svg-sprite-icon icon-delivery product-info-advantage__icon">
                                                 <use xlink:href="img/svg/symbol/sprite.svg#delivery"></use>
-                                            </svg><span class="product-info-advantage__title">Доставка</span>
+                                            </svg><span class="product-info-advantage__title"><%=text.body.details.delivery_text%></span>
                                         </div>
                                         <div class="product-info-advantage__body">
-                                            <p class="product__text">Доставка по всей Украине - <b>бесплатно</b></p>
-                                            <p class="product__text">Самовывоз с нашего мазагина - <b>бесплатно</b></p><a class="product-info__link" href="">Яндекс Карты</a>
+                                            <%for(let i=0;i<text.body.details.delivery.length;i++){%>
+                                                <p class="product__text"><%=text.body.details.delivery[i]%> - <b><%=text.body.details.free%></b></p>
+                                            <%}%>
                                         </div>
                                     </div>
                                     <div class="product-info-advantage">
                                         <div class="product-info-advantage__header">
                                             <svg class="svg-sprite-icon icon-garanty product-info-advantage__icon">
                                                 <use xlink:href="img/svg/symbol/sprite.svg#garanty"></use>
-                                            </svg><span class="product-info-advantage__title">Гарантия</span>
+                                            </svg><span class="product-info-advantage__title"><%=text.body.details.garanty_title%></span>
                                         </div>
                                         <div class="product-info-advantage__body">
-                                            <p class="product__text">Качество всех товаров</p>
+                                            <p class="product__text"><%=text.body.details.garanty%></p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="product__body">
+                    <section id="l-information" class="product__body">
                         <div class="product-details tabs">
                             <div class="mobile-scroll-wrapper">
                                 <div class="mobile-scroll-inner">
                                     <ul class="tabs-navigation product-details-navigation maininform-navigation">
                                         <li class="product-details-navigation__item tabs-navigation__item tabs-navigation__item--active" show-tab="tab-description">Описание</li>
                                         <li class="product-details-navigation__item tabs-navigation__item tabs-navigation__item" show-tab="tab-characteristics">Характеристики</li>
-                                        <li class="product-details-navigation__item tabs-navigation__item tabs-navigation__item" show-tab="tab-payment">Оплата</li>
-                                        <li class="product-details-navigation__item tabs-navigation__item tabs-navigation__item" show-tab="tab-delivery">Доставка</li>
+                                        <li class="product-details-navigation__item tabs-navigation__item tabs-navigation__item" id="tab-payment" show-tab="tab-payment">Оплата</li>
+                                        <li class="product-details-navigation__item tabs-navigation__item tabs-navigation__item" id="tab-delivery" show-tab="tab-delivery">Доставка</li>
                                         <!--li(show-tab="tab-about").product-details-navigation__item.tabs-navigation__item.tabs-navigation__item О нас-->
                                         <!--li(show-tab="tab-company").product-details-navigation__item.tabs-navigation__item.tabs-navigation__item Компании-сотрудники-->
                                     </ul>
                                 </div>
                             </div>
                             <div class="tabs__body product-details__body">
-                                <%let count = 0;%>
-                                <%plomba.forEach(function(p){%>
-
-                                <%});%>
                                 <div class="tab tab-description tab--active">
                                     <div class="content-block">
                                         <h2 class="title-section">Описание</h2>
@@ -435,10 +522,10 @@
                                             <table class="product-table">
                                                 <tbody>
                                                 <%plomba.forEach(function(p){%>
-                                                    <%for(key in p.description.ru){%>
+                                                    <%for(key in p.description[lang]){%>
                                                         <tr class="product-table__row">
                                                             <td class="product-table__cell"><%=key%></td>
-                                                            <td class="product-table__cell"><b><%=p.description.ru[key]%></b></td>
+                                                            <td class="product-table__cell"><b><%=p.description[lang][key]%></b></td>
                                                         </tr>
                                                     <%}%>
                                                 <%})%>
@@ -448,10 +535,10 @@
                                         <table class="product-table">
                                             <tbody>
                                             <%plomba.forEach(function(p){%>
-                                                <%for(key in p.marker.ru){%>
+                                                <%for(key in p.marker[lang]){%>
                                                     <tr class="product-table__row">
                                                         <td class="product-table__cell"><%=key%></td>
-                                                        <td class="product-table__cell"><b><%=p.marker.ru[key]%></b>.</td>
+                                                        <td class="product-table__cell"><b><%=p.marker[lang][key]%></b>.</td>
                                                     </tr>
                                                 <%}%>
                                             <%});%>
@@ -466,10 +553,10 @@
                                             <table class="product-table">
                                                 <tbody>
                                                 <%plomba.forEach(function(p){%>
-                                                    <%for(key in p.packaging.ru){%>
+                                                    <%for(key in p.packaging[lang]){%>
                                                         <tr class="product-table__row">
                                                             <td class="product-table__cell"><%=key%></td>
-                                                            <td class="product-table__cell"><b><%=p.packaging.ru[key]%></b></td>
+                                                            <td class="product-table__cell"><b><%=p.packaging[lang][key]%></b></td>
                                                         </tr>
                                                     <%}%>
                                                 <%});%>
@@ -533,7 +620,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </section>
                 </div>
             </div>
         </section>
@@ -542,7 +629,7 @@
         <!--===========================================================-->
         <div class="container">
             <div class="search-result">
-                <h2 class="search-result__label">Похожие товары</h2>
+                <h2 class="search-result__label"><%=text.body.same_prod%></h2>
                 <div class="products-prev__wrapper">
                     <%recomend.forEach(function(p){%>
                     <div class="product-prev">
@@ -559,15 +646,22 @@
                         </a>
                         <div class="product-prev__body">
                             <a style="color: black" href="<%=p.link%>">
-                                <div class="product-prev__info"><span class="product-prev__title"><%=p.plomb.ru%></span><span class="product-prev__about">Пластик</span></div>
-                                <div class="product-prev__price"><span class="product-prev__price-current"><%=p.price.ru%></span><span class="product-prev__price-old">1.8 грн.</span></div>
+                                <div class="product-prev__info"><span class="product-prev__title"><%=p.plomb[lang]%></span><span class="product-prev__about">Пластик</span></div>
+                                <div class="product-prev__price"><span class="product-prev__price-current"><%=p.price[lang]%></span><span class="product-prev__price-old">1.8 грн.</span></div>
                             </a>
                             <div class="product-prev__colors">
                             </div>
                         </div>
-                        <div class="product-prev__footer">
-                            <button class="btn">В корзину</button>
-                        </div>
+                        <form class="plomb_form">
+                            <div class="product-prev__footer">
+                                <input type="hidden" name="plombName" value="<%=p.plomb_name%>"/>
+                                <%if(typeof products.items[p.plomb_name]==="undefined"){%>
+                                    <input type="submit" value="В корзину"  class="btn">
+                                <%}else{%>
+                                    <input type="submit" value="Добавлено"  class="btn btnAdd">
+                                <%}%>
+                            </div>
+                        </form>
                     </div>
                     <%});%>
 
@@ -695,20 +789,20 @@
     </div>
     <footer class="footer">
         <div class="footer__main">
-            <div class="container"><span class="plombix">Plombix</span><span class="plombix__adres">Украина, Одесса ул. Набережная 76а</span></div>
+            <div class="container"><span class="plombix">Plombix</span><span class="plombix__adres"><%=main.footer.address%></span></div>
         </div>
         <div class="footer__socials">
             <div class="container">
                 <ul class="socials">
-                    <li class="socials__item"><a class="socials__link" href=""><img class="socials__icon" src="img/general/socials/facebook.svg"><span class="socials__name">Facebook</span></a></li>
-                    <li class="socials__item"><a class="socials__link" href=""><img class="socials__icon" src="img/general/socials/instagram.svg"><span class="socials__name">Instagram</span></a></li>
-                    <li class="socials__item"><a class="socials__link" href=""><img class="socials__icon" src="img/general/socials/vk.svg"><span class="socials__name">Вконтакте</span></a></li>
-                    <li class="socials__item"><a class="socials__link" href=""><img class="socials__icon" src="img/general/socials/gmail.svg"><span class="socials__name">Gmail</span></a></li>
+                    <li class="socials__item"><a class="socials__link" href=""><img class="socials__icon" src="../../img/general/socials/facebook.svg"><span class="socials__name">Facebook</span></a></li>
+                    <li class="socials__item"><a class="socials__link" href=""><img class="socials__icon" src="../../img/general/socials/instagram.svg"><span class="socials__name">Instagram</span></a></li>
+                    <li class="socials__item"><a class="socials__link" href=""><img class="socials__icon" src="../../img/general/socials/vk.svg"><span class="socials__name">Вконтакте</span></a></li>
+                    <li class="socials__item"><a class="socials__link" href=""><img class="socials__icon" src="../../img/general/socials/gmail.svg"><span class="socials__name">Gmail</span></a></li>
                 </ul>
             </div>
         </div>
         <div class="footer__bottom">
-            <div class="container"><span class="copyright">Copyright © 2013-2019 Plombix™</span><a class="footer__personal-data" href="">Политика обработки персональных данных</a></div>
+            <div class="container"><span class="copyright">Copyright © 2013-2019 Plombix™</span><a class="footer__personal-data" href=""><%=main.footer.copyright%></a></div>
         </div>
     </footer>
 </div>
@@ -718,5 +812,7 @@
 <script src="js/ajax.js"></script>
 <script src="js/libs/jquery.loupe.min.js"></script>
 <script>$('.demo').loupe();</script>
+<script src="js/ajax.js"></script>
+<script src="js/toast.js"></script>
 </body>
 </html>

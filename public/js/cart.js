@@ -67,10 +67,22 @@ $('.btn-purchase').on('click', function (e) {
             $('.cart-items').addClass('cart-items-purchace')
                 .appendTo('.purchase-wrapper');
             $('.form-style-5, .cart-items').css({display: 'block', display: "none"}).slideDown();
-            $('html,body').stop().animate({scrollTop: $('#test').offset().top - 23}, 1000);
+            $('html,body').stop().animate({scrollTop: $('#purchace').offset().top - 23}, 1000);
 
         });
         e.preventDefault();
+    }else{
+        Toast.add({
+            text: 'Корзина пуста...',
+            color: '#a74e37',
+            autohide: true,
+            delay: 3000
+        });
+    }
+});
+$('.btn-purchase-main').on('click', function () {
+    if($('.cart-row').length > 1){
+
     }else{
         Toast.add({
             text: 'Корзина пуста...',

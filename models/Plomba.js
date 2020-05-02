@@ -43,7 +43,8 @@ let schema = new Schema({
     image: [String],
     colors: [String],
     plomb_search: {type: String, required: true},
-    link:{type: String, required: true}
+    link:{type: String, required: true},
+    type_plomb:{type: String, required:true}
 });
 
 

@@ -2,18 +2,29 @@ const express = require('express');
 const router = express.Router();
 const request = require('request');
 const config = require('../config');
+const text = require('../page');
 // let nodemailer = require('nodemailer');
 let Plombs = require('../models/Plomba');
 let Cart =  require('../models/cart');
-
 
 /*****************************************************************
                          MAIN PAGE
 /****************************************************************/
 router.get('/', function (req,res) {
-    Plombs.find({},function (err, data) {
-        res.render("main/index", {});
-    });
+    let hits;
+    async  function getHits(){
+        await Plombs.find({"type_plomb":"hits"},function (err,data) {
+            hits = data;
+        })
+    }
+    async function getBenefits(){
+        await getHits();
+        let language = req.session.language ? req.session.language : "ru";
+        Plombs.find({"type_plomb":"benefits"}, function (err, data) {
+            res.render("main/index", {hits: hits, benefits: data, products: req.session.cart ? req.session.cart : {items:{}},lang: language, main: text.main[language], text:text.index[language]})
+        })
+    }
+    getBenefits();
 });
 
 /*****************************************************************
@@ -22,7 +33,9 @@ router.get('/', function (req,res) {
 router.get('/category', function (req,res) {
     const category = req.query.category_name;
     Plombs.find({"category": category}, function (err, data) {
-        res.render('main/category', {plombs : data});
+        let language = req.session.language ? req.session.language : "ru";
+
+        res.render('main/category', {plombs : data, products: req.session.cart ? req.session.cart : {items:{}},lang: language, main: text.main[language], text:text.index[language]});
     })
 });
 
@@ -42,13 +55,19 @@ router.get('/product', function (req,res) {
     async function pushPlombs(){
         await getPlombs();
         Plombs.find({"plomb_name": plomb}, function (err, data) {
-            res.render('main/product', {plomba : data, recomend: plombData, products: req.session.cart ? req.session.cart : {items:{}}});
+            let language = req.session.language ? req.session.language : "ru";
+            res.render('main/product', {plomba : data, recomend: plombData, products: req.session.cart ? req.session.cart : {items:{}},lang: language, main: text.main[language], text:text.product[language]});
         });
     }
     pushPlombs();
 });
+/*****************************************************************
+                         CART PAGE
+ /****************************************************************/
+
 router.get('/cart', function (req,res) {
-    res.render('main/cart',{products: req.session.cart ? req.session.cart : {}})
+    let language = req.session.language ? req.session.language : "ru";
+    res.render('main/cart',{products: req.session.cart ? req.session.cart : {},lang: language, main: text.main[language], text:text.cart[language]})
 });
 
 /*****************************************************************
@@ -109,7 +128,8 @@ router.get('/send', (req,res)=>{
 
 router.get('/products', function (req,res) {
     Plombs.find({}, function (err, data) {
-        res.render('main/products', {plombs : data, products: req.session.cart ? req.session.cart : {items:{},totalQty:0}});
+        let language = req.session.language ? req.session.language : "ru";
+        res.render('main/products', {plombs : data, products: req.session.cart ? req.session.cart : {items:{},totalQty:0},lang: language, main: text.main[language]});
     });
 });
 
@@ -120,7 +140,8 @@ router.get('/products', function (req,res) {
 router.post('/search', function (req,res) {
     let reg ='.*' + req.body.search_text +'.*';
     Plombs.find({plomb_search : {$regex: reg, $options:"i"}}, function (err, data) {
-        res.render('main/search', {plombs : data, reque: req.body.search_text});
+        let language = req.session.language ? req.session.language : "ru";
+        res.render('main/search', {plombs : data, reque: req.body.search_text, products: req.session.cart ? req.session.cart : {items:{}},lang: language, main: text.main[language], text:text.search[language] });
     });
 });
 
@@ -179,6 +200,10 @@ router.get('/get-data-post', function (req,res,next) {
         });
         res.send({city:city})
     });
+});
+router.get('/change-language', function (req,res) {
+    req.session.language = req.query.language;
+    res.redirect(req.headers.referer);
 });
 
 module.exports.route = router;

@@ -26,17 +26,18 @@
                 <div class="header__content">
                     <nav class="header__nav inform-nav">
                         <ul class="inform-nav__list">
-                            <li class="inform-nav__item"><a class="inform-nav__link" href="/products">ТОВАРЫ</a></li>
-                            <li class="inform-nav__item"><a class="inform-nav__link" href="#l-information">ДОСТАВКА</a></li>
-                            <li class="inform-nav__item"><a class="inform-nav__link" href="#l-information">О НАС</a></li>
-                            <li class="inform-nav__item"><a class="inform-nav__link" href="#l-information">ОПЛАТА</a></li>
+                            <li class="inform-nav__item"><a class="inform-nav__link" href="/products"><%=main.header.nav.product%></a></li>
+                            <li class="inform-nav__item"><a class="inform-nav__link" href="#tab-delivery"><%=main.header.nav.delivery%></a></li>
+                            <li class="inform-nav__item"><a class="inform-nav__link" href="#l-information"><%=main.header.nav.about%></a></li>
+                            <li class="inform-nav__item"><a class="inform-nav__link" href="#tab-payment"><%=main.header.nav.payments%></a></li>
                         </ul>
                     </nav>
                     <nav class="header__nav header__nav--right inform-nav">
                         <ul class="inform-nav__list">
-                            <li class="inform-nav__item"><a class="inform-nav__link" href="">УКР</a></li>
-                            <li class="inform-nav__item"><a class="inform-nav__link" href="">РУС</a></li>
-                            <li class="inform-nav__item"><a class="inform-nav__link" href="">ENG</a></li>
+                            <li class="inform-nav__item"><a class="inform-nav__link change_lang" href="/change-language?language=uk">УКР</a></li>
+                            <li class="inform-nav__item"><a class="inform-nav__link change_lang" href="/change-language?language=ru">РУС</a></li>
+                            <li class="inform-nav__item"><a class="inform-nav__link change_lang" href="/change-language?language=pl">PL</a></li>
+                            <li class="inform-nav__item"><a class="inform-nav__link change_lang" href="/change-language?language=en">ENG</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -44,13 +45,13 @@
         </div>
         <div class="header__main">
             <div class="container">
-                <div class="header__content"><a class="header__logo logo" href="/"><img class="logo__img" src="img/general/logo.png" alt="Логотип"></a>
+                <div class="header__content"><a class="header__logo logo" href="/"><img class="logo__img" src="../../img/general/logo.png" alt="Логотип"></a>
                     <div class="header__phones">
-                        <div class="header__item header__item--mobile"><a class="header__phone" href="tel:380-95-35-125">+380-95-35-125</a>
+                        <div class="header__item header__item--mobile"><a class="header__phone" href="tel:380-95-35-125"><%=main.header.feedback.phone_number%></a>
                             <div class="call-menu">
-                                <div class="header__link">Заказать звонок</div>
+                                <div class="header__link"><%=main.header.feedback.order%></div>
                                 <div class="call-menu__content">
-                                    <div class="call-menu__header"><span class="call-menu__title">Обратная связь</span>
+                                    <div class="call-menu__header"><span class="call-menu__title"><%=main.header.feedback.text%></span>
                                         <div class="call-menu__close">
                                             <svg class="svg-sprite-icon icon-close mobile-menu__close-icon">
                                                 <use xlink:href="img/svg/symbol/sprite.svg#close"></use>
@@ -59,18 +60,18 @@
                                     </div>
                                     <div class="call-menu__body">
                                         <nav class="catalog-nav">
-                                            <div class="call-menu__input-wrapper"><span class="text_call">Имя</span></div>
+                                            <div class="call-menu__input-wrapper"><span class="text_call"><%=main.header.feedback.name%></span></div>
                                             <div class="call-menu__input-wrapper">
-                                                <input class="call-menu__input" placeholder="Введите ваше имя...">
+                                                <input class="call-menu__input" placeholder="<%=main.header.feedback.plh_name%>">
                                                 <div class="search__clear">
                                                     <svg class="svg-sprite-icon icon-close search__clear-icon">
                                                         <use xlink:href="img/svg/symbol/sprite.svg#close"></use>
                                                     </svg>
                                                 </div>
                                             </div>
-                                            <div class="call-menu__input-wrapper"><span class="text_call">Телефон / Email</span></div>
+                                            <div class="call-menu__input-wrapper"><span class="text_call"><%=main.header.feedback.phone%></span></div>
                                             <div class="call-menu__input-wrapper">
-                                                <input class="call-menu__input" placeholder="Введите телефон / почтy...">
+                                                <input class="call-menu__input" placeholder="<%=main.header.feedback.plh_phone%>">
                                                 <div class="search__clear">
                                                     <svg class="svg-sprite-icon icon-close search__clear-icon">
                                                         <use xlink:href="img/svg/symbol/sprite.svg#close"></use>
@@ -78,9 +79,7 @@
                                                 </div>
                                             </div>
                                             <div class="call-menu__input-wrapper">
-                                                <a href="/send">
-                                                    <button class="btn">Отправить</button>
-                                                </a>
+                                                <button class="btn"><%=main.header.feedback.button_send%></button>
                                             </div>
                                         </nav>
                                         <nav class="inform-nav inform-nav--col">
@@ -93,21 +92,24 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="header__item"><a class="header__phone" href="mail:mail">MAIL</a>
-                            <div class="header__link">Связаться с нами</div>
-                        </div>
+                        <div class="header__item"><a class="header__phone" href="mail:mail">MAIL</a><a class="header__link" href="">Связаться с нами</a></div>
                     </div>
                     <div class="header__adress header-address">
                         <svg class="svg-sprite-icon icon-map-marker header-address__icon">
                             <use xlink:href="img/svg/symbol/sprite.svg#map-marker"></use>
-                        </svg><span class="header-address__text">Украина, Одесса ул. Набережная 79а</span>
+                        </svg><span class="header-address__text"><%=main.header.address%></span>
                     </div>
                     <div class="header__shop">
                         <div class="header-goods"><span class="header-goods__price">0 &#8372</span><span class="header-goods__count">0 товаров</span></div>
-                    </div><a class="header-basket" href="/cart">
-                        <svg class="svg-sprite-icon icon-cart header-basket__icon">
-                            <use xlink:href="img/svg/symbol/sprite.svg#cart"></use>
-                        </svg><span class="header-basket__text">Корзина</span></a>
+                    </div>
+
+                    <div class="header-basket">
+                        <a href="/cart">
+                            <svg class="svg-sprite-icon icon-cart header-basket__icon">
+                                <use xlink:href="img/svg/symbol/sprite.svg#cart"></use>
+                            </svg><span class="header-basket__text"><%=main.header.cart%></span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -116,7 +118,7 @@
                 <div class="header__content">
                     <nav class="header__main-nav main-nav">
                         <ul class="main-nav__list">
-                            <li class="main-nav__item"><a class="main-nav__link" href="/category?category_name=tross_plomb">Тросовые пломбы</a>
+                            <li class="main-nav__item"><a class="main-nav__link" href="/category?category_name=tross_plomb"><%=main.header.category.tross_plomb%></a>
                                 <div class="main-nav-dropdown-wrapper">
                                     <div class="main-nav-dropdown">
                                         <ul class="main-nav-dropdown__list">
@@ -133,7 +135,7 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="main-nav__item"><a class="main-nav__link" href="/category?category_name=kontr_plomb">Контрольные пломбы</a>
+                            <li class="main-nav__item"><a class="main-nav__link" href="/category?category_name=kontr_plomb"><%=main.header.category.kontr_plomb%></a>
                                 <div class="main-nav-dropdown-wrapper">
                                     <div class="main-nav-dropdown">
                                         <ul class="main-nav-dropdown__list">
@@ -159,7 +161,7 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="main-nav__item"><a class="main-nav__link" href="/category?category_name=indikat_plomb">Индикаторные пломбы</a>
+                            <li class="main-nav__item"><a class="main-nav__link" href="/category?category_name=indikat_plomb"><%=main.header.category.indikat_plomb%></a>
                                 <div class="main-nav-dropdown-wrapper">
                                     <div class="main-nav-dropdown">
                                         <ul class="main-nav-dropdown__list">
@@ -180,7 +182,7 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="main-nav__item"><a class="main-nav__link" href="/category?category_name=kontejner_plomb">Контейнерные пломбы</a>
+                            <li class="main-nav__item"><a class="main-nav__link" href="/category?category_name=kontejner_plomb"><%=main.header.category.kontejner_plomb%></a>
                                 <div class="main-nav-dropdown-wrapper">
                                     <div class="main-nav-dropdown">
                                         <ul class="main-nav-dropdown__list">
@@ -206,7 +208,7 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="main-nav__item"><a class="main-nav__link" href="/category?category_name=sejf_paket">Сейф-Пакеты</a>
+                            <li class="main-nav__item"><a class="main-nav__link" href="/category?category_name=sejf_paket"><%=main.header.category.sejf_paket%></a>
                                 <div class="main-nav-dropdown-wrapper">
                                     <div class="main-nav-dropdown">
                                         <ul class="main-nav-dropdown__list">
@@ -230,16 +232,16 @@
                             <use xlink:href="img/svg/symbol/sprite.svg#search"></use>
                         </svg>
                         <div class="search__body">
-                            <form class="search__form" action="search.html">
+                            <form class="search__form" action="/search" method="POST" >
                                 <div class="search__input-wrapper">
-                                    <input class="search__input" placeholder="Я хочу найти...">
+                                    <input class="search__input" name="search_text" placeholder="<%=main.header.search.plh_search%>">
                                     <div class="search__clear">
                                         <svg class="svg-sprite-icon icon-close search__clear-icon">
                                             <use xlink:href="img/svg/symbol/sprite.svg#close"></use>
                                         </svg>
                                     </div>
                                 </div>
-                                <input class="search__btn" type="submit" value="Найти">
+                                <input class="search__btn" type="submit" value="<%=main.header.search.btn_search%>">
                             </form>
                         </div>
                     </div>
@@ -267,27 +269,27 @@
                         <div class="mobile-menu__body">
                             <nav class="catalog-nav">
                                 <ul class="catalog-nav__list">
-                                    <li class="catalog-nav__item"><a class="catalog-nav__link" href="category.html"><span class="catalog-nav__text">Тросовые пломбы</span>
+                                    <li class="catalog-nav__item"><a class="catalog-nav__link" href="/category"><span class="catalog-nav__text">Тросовые пломбы</span>
                                             <svg class="svg-sprite-icon icon-chevron-right catalog-nav__icon">
                                                 <use xlink:href="img/svg/symbol/sprite.svg#chevron-right"></use>
                                             </svg></a></li>
-                                    <li class="catalog-nav__item"><a class="catalog-nav__link" href="category.html"><span class="catalog-nav__text">Контрольные пломбы</span>
+                                    <li class="catalog-nav__item"><a class="catalog-nav__link" href="/category"><span class="catalog-nav__text">Контрольные пломбы</span>
                                             <svg class="svg-sprite-icon icon-chevron-right catalog-nav__icon">
                                                 <use xlink:href="img/svg/symbol/sprite.svg#chevron-right"></use>
                                             </svg></a></li>
-                                    <li class="catalog-nav__item"><a class="catalog-nav__link" href="category.html"><span class="catalog-nav__text">Индикаторные пломбы</span>
+                                    <li class="catalog-nav__item"><a class="catalog-nav__link" href="/category?category_name=indikat_plomb"><span class="catalog-nav__text">Индикаторные пломбы</span>
                                             <svg class="svg-sprite-icon icon-chevron-right catalog-nav__icon">
                                                 <use xlink:href="img/svg/symbol/sprite.svg#chevron-right"></use>
                                             </svg></a></li>
-                                    <li class="catalog-nav__item"><a class="catalog-nav__link" href="category.html"><span class="catalog-nav__text">Контейнерные пломбы</span>
+                                    <li class="catalog-nav__item"><a class="catalog-nav__link" href="/category"><span class="catalog-nav__text">Контейнерные пломбы</span>
                                             <svg class="svg-sprite-icon icon-chevron-right catalog-nav__icon">
                                                 <use xlink:href="img/svg/symbol/sprite.svg#chevron-right"></use>
                                             </svg></a></li>
-                                    <li class="catalog-nav__item"><a class="catalog-nav__link" href="category.html"><span class="catalog-nav__text">Аксессуары</span>
+                                    <li class="catalog-nav__item"><a class="catalog-nav__link" href="/category"><span class="catalog-nav__text">Аксессуары</span>
                                             <svg class="svg-sprite-icon icon-chevron-right catalog-nav__icon">
                                                 <use xlink:href="img/svg/symbol/sprite.svg#chevron-right"></use>
                                             </svg></a></li>
-                                    <li class="catalog-nav__item"><a class="catalog-nav__link" href="category.html"><span class="catalog-nav__text">Сейф-Пакеты</span>
+                                    <li class="catalog-nav__item"><a class="catalog-nav__link" href="/category"><span class="catalog-nav__text">Сейф-Пакеты</span>
                                             <svg class="svg-sprite-icon icon-chevron-right catalog-nav__icon">
                                                 <use xlink:href="img/svg/symbol/sprite.svg#chevron-right"></use>
                                             </svg></a></li>
@@ -348,9 +350,10 @@
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
-                <div class="mobile__logo logo"><img class="logo__img" src="img/general/logo.png" alt="Логотип"></div>
+                <div class="mobile__logo logo"><img class="logo__img" src="../../img/general/logo.png" alt="Логотип"></div>
                 <div class="search">
                     <form class="search__form">
                         <div class="search__input-wrapper">
@@ -391,73 +394,128 @@
     <div class="content">
         <section class="s-cart">
             <div class="container">
-                <div class="cart-row"><span class="cart-item cart-deader cart-column">ITEM</span><span class="cart-price cart-deader cart-column">PRICE</span><span class="cart-quantity cart-deader cart-column">QUANTITY</span></div>
+                <div class="cart-row"><span class="cart-item cart-deader cart-column"><%=text.body.products_table.item%></span><span class="cart-price cart-deader cart-column"><%=text.body.products_table.price%></span><span class="cart-quantity cart-deader cart-column"><%=text.body.products_table.quantity%></span></div>
                 <div class="cart-items">
                     <%for(key in products.items){%>
                         <div class="cart-row">
-                            <div class="cart-item cart-column"><img class="cart-item-image" src="<%=products.items[key].item.image[0]%>"><span class="cart-item-title"><%=products.items[key].item.plomb.ru%></span></div><span class="cart-price cart-column"><%=products.items[key].item.price.ru%></span>
+                            <div class="cart-item cart-column"><img class="cart-item-image" src="<%=products.items[key].item.image[0]%>"><span class="cart-item-title"><%=products.items[key].item.plomb[lang]%></span></div><span class="cart-price cart-column"><%=products.items[key].item.price[lang]%></span>
                             <div class="cart-quantity cart-column">
                                 <input class="cart-quantity-input" type="number" value="<%=products.items[key].count%>">
-                                <button name="<%=key%>" class="btn-remove">REMOVE</button>
+                                <button name="<%=key%>" class="btn-remove"><%=text.body.products_table.btn_remove%></button>
                             </div>
                         </div>
                     <%};%>
                     <div class="cart-total"><strong class="cart-total-title">Total</strong><span class="cart-total-price"><%=products.totalPrice%> <span>грн</span> </span></div>
-                    <button class="btn btn-primary btn-purchase"> PURCHASE</button>
+                    <button class="btn btn-primary btn-purchase"> <%=text.body.products_table.btn_purchase%></button>
                 </div>
             </div>
         </section>
-        <section id="test" class="s-purchace">
+        <section id="purchace" class="s-purchace">
 <!--            <a id="test"></a>-->
             <div class="purchase-wrapper">
                 <div class="form-style-5">
                     <form>
                         <fieldset >
-                            <legend><span class="number">1</span> Данные о доставке</legend>
-                            <input type="text" name="name" placeholder="Имя *">
-                            <input type="text" name="surname" placeholder="Фамилия *">
-                            <input type="text" name="phone" placeholder="Телефон *">
+                            <legend><span class="number">1</span><%=text.body.purchace_menu.delivery_title%></legend>
+                            <input type="text" name="name" placeholder="<%=text.body.purchace_menu.name%>">
+                            <input type="text" name="surname" placeholder="<%=text.body.purchace_menu.surname%>">
+                            <input type="text" name="phone" placeholder="<%=text.body.purchace_menu.phone%>">
                             <input type="email" name="email" placeholder="Email ">
                             <label for="town">Адрес доставки:</label>
-                            <input type="text" name="town" placeholder="Город *">
+                            <input type="text" name="town" placeholder="<%=text.body.purchace_menu.city%>">
                             <select id="job" name="field4">
-                                    <option value="" disabled selected hidden>Выберите город...</option>
+                                    <option value="" disabled selected hidden><%=text.body.purchace_menu.choose%></option>
                                     <option value="fishkeeping">Киев</option>
                                     <option value="reading">Днепр</option>
                                     <option value="boxing">Одесса</option>
                             </select>
-                            <input id="address" type="text" name="surname" placeholder="Адрес *">
+                            <input id="address" type="text" name="surname" placeholder="<%=text.body.purchace_menu.plh_address%>">
                         </fieldset>
                         <fieldset>
-                            <legend><span class="number">2</span> Данные об оплате</legend>
-                            <input type="text" name="town" placeholder="Номер карты *">
+                            <legend><span class="number">2</span><%=text.body.purchace_menu.payment%></legend>
+                            <input type="text" name="town" placeholder="<%=text.body.purchace_menu.plh_cart%>">
                             <div class="card-info">
                                 <input class="cart-info__item" type="text" name="surname" placeholder="MM / YYYY *">
                                 <input  type="text" name="surname" placeholder="CVC *">
                             </div>
                         </fieldset>
-                        <input type="submit" value="Apply" />
+                        <input class="btn-purchase-main" type="submit" value="<%=text.body.purchace_menu.btn_apply%>" />
                     </form>
                 </div>
             </div>
         </section>
     </div>
+    <section id="l-information" class="info">
+        <div class="container">
+            <div class="product__body">
+                <div class="product-details tabs">
+                    <div class="mobile-scroll-wrapper">
+                        <div class="mobile-scroll-inner">
+                            <ul class="tabs-navigation product-details-navigation maininform-navigation">
+                                <li class="product-details-navigation__item tabs-navigation__item tabs-navigation__item--active" id="tab-payment" show-tab="tab-payment"><%=main.body.details.payment.head_text%></li>
+                                <li class="product-details-navigation__item tabs-navigation__item tabs-navigation__item" id="tab-delivery" show-tab="tab-delivery"><%=main.body.details.delivery.head_title%></li>
+                                <!--li(show-tab="tab-about").product-details-navigation__item.tabs-navigation__item.tabs-navigation__item О нас-->
+                                <!--li(show-tab="tab-company").product-details-navigation__item.tabs-navigation__item.tabs-navigation__item Компании-сотрудники-->
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="tabs__body product-details__body">
+                        <div class="tab tab-payment tab--active">
+                            <div class="content-block">
+                                <h2 class="title-section"><%=main.body.details.payment.head_text%></h2>
+                                <div class="product-table__wrapper"><span class="product-table__title"><%=main.body.details.payment.hea%></span>
+                                    <table class="product-table">
+                                        <tbody>
+                                        <%for(let i=0; i<main.body.details.payment.table_text.length;i++){%>
+                                        <tr class="product-table__row">
+                                            <td class="product-table__cell"><%=main.body.details.payment.table_text[i]%></td>
+                                        </tr>
+                                        <%}%>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab tab-delivery">
+                            <div class="content-block">
+                                <h2 class="title-section"><%=main.body.details.delivery.head_title%></h2>
+                                <p class="text"><%=main.body.details.delivery.head_text%></p>
+                                <div class="product-table__wrapper"><span class="product-table__title"><%=main.body.details.delivery.table_name%></span>
+                                    <table class="product-table">
+                                        <tbody>
+                                        <%for(let i=0; i<main.body.details.delivery.table_text.length;i++){%>
+                                        <tr class="product-table__row">
+                                            <td class="product-table__cell"><%=main.body.details.delivery.table_text[i]%></td>
+                                        </tr>
+                                        <%}%>
+                                        </tbody>
+                                    </table>
+                                </div><span class="product-table__title"><%=main.body.details.delivery.price%></span>
+                                <p class="text"><%=main.body.details.delivery.price_text%></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <footer class="footer">
-        <div  class="footer__main">
-            <div class="container"><span class="plombix">Plombix</span><span class="plombix__adres">Украина, Одесса ул. Набережная 76а</span></div>
+        <div class="footer__main">
+            <div class="container"><span class="plombix">Plombix</span><span class="plombix__adres"><%=main.footer.address%></span></div>
         </div>
         <div class="footer__socials">
             <div class="container">
                 <ul class="socials">
-                    <li class="socials__item"><a class="socials__link" href=""><img class="socials__icon" src="img/general/socials/facebook.svg"><span class="socials__name">Facebook</span></a></li>
-                    <li class="socials__item"><a class="socials__link" href=""><img class="socials__icon" src="img/general/socials/instagram.svg"><span class="socials__name">Instagram</span></a></li>
-                    <li class="socials__item"><a class="socials__link" href=""><img class="socials__icon" src="img/general/socials/vk.svg"><span class="socials__name">Вконтакте</span></a></li>
-                    <li class="socials__item"><a class="socials__link" href=""><img class="socials__icon" src="img/general/socials/gmail.svg"><span class="socials__name">Gmail</span></a></li>
+                    <li class="socials__item"><a class="socials__link" href=""><img class="socials__icon" src="../../img/general/socials/facebook.svg"><span class="socials__name">Facebook</span></a></li>
+                    <li class="socials__item"><a class="socials__link" href=""><img class="socials__icon" src="../../img/general/socials/instagram.svg"><span class="socials__name">Instagram</span></a></li>
+                    <li class="socials__item"><a class="socials__link" href=""><img class="socials__icon" src="../../img/general/socials/vk.svg"><span class="socials__name">Вконтакте</span></a></li>
+                    <li class="socials__item"><a class="socials__link" href=""><img class="socials__icon" src="../../img/general/socials/gmail.svg"><span class="socials__name">Gmail</span></a></li>
                 </ul>
             </div>
         </div>
-        <div  class="footer__bottom">
-            <div class="container"><span class="copyright">Copyright © 2013-2019 Plombix™</span><a class="footer__personal-data" href="">Политика обработки персональных данных</a></div>
+        <div class="footer__bottom">
+            <div class="container"><span class="copyright">Copyright © 2013-2019 Plombix™</span><a class="footer__personal-data" href=""><%=main.footer.copyright%></a></div>
         </div>
     </footer>
 </div>

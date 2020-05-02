@@ -22,7 +22,16 @@ $('select').on('change',function () {
     let sity = $("option:selected", this).text();
     getData(sity);
 });
-
+// $('.change_lang').on('click', function (event) {
+//     event.preventDefault();
+//     $.ajax({
+//         url: $(this).attr('href'),
+//         method: 'GET',
+//         success:function (data) {
+//             console.log(data)
+//         }
+//     });
+// });
 function getData(sity) {
     let mainData;
     $.ajax({
@@ -69,13 +78,19 @@ function replaceInAdd(frm){
     if(frm[0].getElementsByClassName('btn')[0].value !== 'Добавлено'){
         let count = $('.header-goods__count')[0].innerText.split(/(\s+)/)[0];
         $('.header-goods__count')[0].innerText = (Number.parseInt(count) + 1) + GetNameCount(Number.parseInt(count) + 1);
+        frm[0].getElementsByClassName('btn')[0].value='Добавлено';
+        Toast.add({
+            text: 'Добавлено: ' + frm.parent()[0].innerText.split('\n')[0],
+            color: '#28a745',
+            autohide: true,
+            delay: 3000
+        })
     }
-    frm[0].getElementsByClassName('btn')[0].value='Добавлено';
 }
 
 /**
  * {
- "apiKey": "34f04f2e621da99d13154fcde9fd1101",
+ "apiKey": "api key",
  "modelName": "Address",
     "calledMethod": "getWarehouses",
     "methodProperties": {
